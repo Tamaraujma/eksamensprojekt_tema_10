@@ -3,21 +3,112 @@
 
 ---
 
-<header>
-    <div class="bruger">
-        <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="logo"> <img src="/logo.svg"  alt="fred's logo"></div>
 
-    <nav>
-        <ul>
-			<li><a href="/">Forside</a></li>
-			<li><a href="/menu">Menu</a></li>
-			<li><a href="/om_freds">Om Fred's</a></li>
-			<li><a href="/fordele">Fordele</a></li>
-		</ul>
-    </nav>
-    </div>
+ <header class="header">
+  <div class="burger" id="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="logo">
+    <img src="/logo.svg" alt="Fred's logo" />
+  </div>
+
+  <nav id="nav">
+    <ul class="menu">
+      <li><a href="/">FORSIDE</a></li>
+      <li><a href="/menu">MENU</a></li>
+      <li><a href="/om_freds">OM FRED'S</a></li>
+      <li><a href="/fordele">FORDELE</a></li>
+    </ul>
+  </nav>
 </header>
+<script src="/src/js/burger.js"></script>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 5px solid rgba(189, 204, 165, 1);
+    position: relative;
+  }
+
+  .logo img {
+    height: 100px;
+    width: auto;
+  }
+
+  nav ul.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  nav a:hover {
+    color: rgba(250, 113, 156, 1);
+  }
+
+  /* Burger menu */
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 20px;
+    height: 3px;
+    background-color: rgba(189, 204, 165, 1);
+  }
+
+  @media (max-width: 768px) {
+
+     header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      display: none;
+      padding: 1rem 2rem;
+      z-index: 10;
+    border: 5px solid rgba(189, 204, 165, 1);
+    }
+
+    nav.active {
+      display: block;
+    }
+
+    nav ul.menu {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: right;
+    }
+
+    .burger {
+      display: flex;
+    }
+  }
+
+</style>
