@@ -5,15 +5,16 @@
 
 
  <header class="header">
+    <div class="logo">
+    <img src="/logo.svg" alt="Fred's logo" />
+  </div>
   <div class="burger" id="burger">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <div class="logo">
-    <img src="/logo.svg" alt="Fred's logo" />
-  </div>
+ 
 
   <nav id="nav">
     <ul class="menu">
@@ -33,7 +34,7 @@
     padding: 0;
   }
 
-  header {
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,7 +81,7 @@
 
   @media (max-width: 768px) {
 
-     header {
+     .header {
       flex-direction: row;
       justify-content: space-between;
     }
