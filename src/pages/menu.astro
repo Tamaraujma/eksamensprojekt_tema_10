@@ -1,10 +1,11 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import matchaIllustration from "../assets/Matcha.png"
 import salon from "../assets/IMG_4586_result.webp"
 import outside from "../assets/IMG_4543_result.webp"
 import door from "../assets/IMG_4577_result.webp"
 ---
-
+<Layout>
 <h1>MENU</h1>
 <h2>BEHIND THE SCENES</h2>
 <p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
@@ -28,6 +29,7 @@ import door from "../assets/IMG_4577_result.webp"
 <img src={outside.src} alt="Outside" />
 <img src={door.src} alt="Door" />
 
+</Layout>
 <style>
     
 </style>
