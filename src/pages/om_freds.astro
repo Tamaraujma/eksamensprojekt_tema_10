@@ -1,7 +1,101 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import om_fred_img from '../assets/IMG_4566_result.webp';
+import galleri_1 from '../assets/IMG_4633_result.webp';
+import galleri_2 from '../assets/IMG_4592_result.webp';
+import galleri_3 from '../assets/IMG_4574_result.webp';
+import galleri_4 from '../assets/IMG_4608_result.webp';
+import galleri_5 from '../assets/IMG_4531_result.webp';
+import galleri_6 from '../assets/IMG_4638_result.webp';
+
 ---
 
 <Layout>
-
+    <h1>ABOUT FRED'S</h1>
+        <img class="om_fred_img" src={om_fred_img.src} alt="om freds billede">
+        <div class="beige_baggrund">
+        <div class="backstory">
+           <h1>BACKSTORY</h1>
+           <p>Fred's was founded by Frederik and Josefine, with Josefine also being the creative force behind the salon Studio 27. We opened our doors on April 7, 2025, and quickly became a favorite spot for matcha in the city, attracting not only customers from the salons but also many visitors who discovered us through social media. Fred's was created out of Josefine's passion for managing multiple projects and her desire to bring something new to life. She thrives on exploring fresh ideas and wanted to create a space where people could relax, enjoy high-quality coffee, and feel a sense of community. The combination of her experience in the beauty industry and her entrepreneurial spirit led to the birth of Fred's.</p>
+        </div>
+        </div>
+            <h2>GALLERY</h2>
+            <div class="about_freds_1-1-1">
+            <img class="galleri_1" src={galleri_1.src} alt="galleri billede 1">
+            <img class="galleri_2" src={galleri_2.src} alt="galleri billede 2">
+            <img class="galleri_3" src={galleri_3.src} alt="galleri billede 3">
+            <img class="galleri_4" src={galleri_4.src} alt="galleri billede 4">
+            <img class="galleri_5" src={galleri_5.src} alt="galleri billede 5">
+            <img class="galleri_6" src={galleri_6.src} alt="galleri billede 6">
+        </div>
 </Layout>
+
+<style>
+    .galleri_1, .galleri_2, .galleri_3, .galleri_4, .galleri_5, .galleri_6{
+        border-radius: 80px;
+        width: 80%;
+        max-width: 300px;
+        aspect-ratio: 1.5 /2;
+        object-fit: cover;
+        margin:  1rem auto;
+        margin-bottom: 40px;
+    }
+    .om_fred_img{
+        border-radius: 80px;
+        margin: 20px auto; /*auto til at centrere */
+        width: 80%;
+        max-width: 300px;
+        aspect-ratio: 1.5 /2 ;
+        object-fit: cover;
+        display: block;
+    }
+    .backstory{
+       border: 3px solid #FA719C;
+       padding: 20px;
+       margin: 20px 0;
+       border-radius: 40px;
+       margin-left: 10px;
+       margin-right: 10px;
+    }
+    .beige_baggrund{
+        background-color: #F7F1E6;
+        padding: 30px;
+        margin-top: 30px;
+    }
+    h1{
+        text-align: center;
+    }
+    .about_freds_1-1-1{
+        text-align: center;
+    }
+    h2{
+        margin: 20px;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .about_freds_1-1-1{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /*Tre lige brede kolooner */
+            grid-template-rows: auto auto; /*To rækker */
+        }
+       
+        .om_fred_img{
+            width: 100%;
+            max-width: 900px;
+             height: auto; /* Bevarer billedets proportioner */
+             aspect-ratio: 16/9; /* Gør billedet aflangt og vandret */
+              margin-left: auto;  /* Centrerer boksens venstre margin */
+              margin-right: auto; /* Centrerer boksens højre margin */
+        }
+        .backstory{
+            max-width: 900px; /* Maksimal bredde */
+            height: 300px;
+              margin-left: auto;  /* Centrerer boksens venstre margin */
+              margin-right: auto; /* Centrerer boksens højre margin */
+        }
+    
+        }
+
+</style>
+
