@@ -14,7 +14,8 @@ import FreddieO from '../assets/FreddieO_result.webp';
 	<img class="hero" src={heroImage.src} alt="Forsidebillede" />
     <section class="ramme">
     <h1>Welcome to Fred’s Coffeeshop!</h1>
-    <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O. Fred’s is a family-owned business, founded by the creators of the two salons. Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
+    <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O.</p>
+    <p>Fred’s is a family-owned business, founded by the creators of the two salons. Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
     <p>Find us behind the nail and hair salon!</p>
     <div class="button-group">
     <button class="button">FRED´S</button>
@@ -22,40 +23,53 @@ import FreddieO from '../assets/FreddieO_result.webp';
     </div>
   
 </section>
+<div class="billede_group">
 <img class="drink" src={Matcha1.src} alt="matcha">
 <img class="drink" src={Latte.src} alt="latte">
 <img class="drink" src={Matcha2.src} alt="matcha2">
+</div>
 <section class="beige">
 <h2>NEWS</h2>
-<img class="emmely" src={Emmely.src} alt="Emmely">
+<div class="news-content">
+    <div>
+<img class="emmely" src={Emmely.src} alt="Emmely"></div>
 <div class="ramme_pink">
     <h4>EMMELY MORAITIS</h4>
     <p>In collaboration with influencer Emmely Moraitis, we’ve created a Pistachio Matcha drink – available at Fred’s starting June 1st, 2025!</p>
+</div>
 </div>
 <button class="button">READ MORE</button>
 </section>
 <h2>FOR YOU</h2>
 <div class="beige_box">
-    Fred’s is constantly evolving, which is why we collaborate with various brands and influencers. We also want to give you, our customers, something in return. Learn more about exclusive benefits and collaborations under our Treasures section!
+    <p>Fred’s is constantly evolving, which is why we collaborate with various brands and influencers. We also want to give you, our customers, something in return. Learn more about exclusive benefits and collaborations under our Treasures section!</p>
 </div>
-<div class="center_knap">
+<div class="center_knap"> 
    <button class="button">TREASURES</button> 
 </div>
 <section class="pink">
+    <div>
     <h3>STUDIO 27</h3>
     <img class="studio" src={Studio27.src} alt="studio27">
     <div class="ramme_beige">
         <p>Studio 27 is a nail salon owned by Josefine and run together with a talented team of professionals. The salon offers  high-quality treatments in the heart of Copenhagen. Book your appointment below and treat yourself to a fresh set of nails!
     </p>
 </div>
+<div class="center_knap">
     <button class="button_beige">BOOKINGS</button>
+</div>
+</div>
+<div>
     <h3>FREDDIE´O</h3>
     <img class="freddieo" src={FreddieO.src} alt="freddieo">
      <div class="ramme_beige">
     <p>Freddie’O is owned by Frederikke Sophie, sister of Studio 27’s founder, Josefine, and is located inside the salon in the heart of Copenhagen.
     You can book your appointment to get fresh hair  below!</p>
 </div>
+<div class="center_knap">
     <button class="button_beige">BOOKINGS</button>
+</div>
+</div>
 </section>
 </Layout>
 
@@ -70,16 +84,24 @@ import FreddieO from '../assets/FreddieO_result.webp';
   overflow: hidden;
  }
 
- .drink,
-.emmely,
-.studio,
-.freddieo {
+ .drink{
   display: block;
   margin: 1rem auto;
   width: 80%;
   max-width: 300px;
   height: auto;
     border-radius: 80px;
+}
+
+.emmely,
+.studio,
+.freddieo {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+        border-radius: 80px;
 }
 
 .button-group {
@@ -97,39 +119,42 @@ import FreddieO from '../assets/FreddieO_result.webp';
  }
 
  .button {
-    width: 180px;  /* Sætter en fast bredde */
-    height:50px;  /* Sætter en fast højde */
-  background-color: #c8d3ae; /* grønlig farve – justér hvis den er lidt forkert */
+    width: 180px;  
+    height:50px;  
+  background-color: #c8d3ae; 
   border: none;
-  border-radius: 100px; /* gør knapperne helt runde */
+  border-radius: 100px; 
   padding: 0.8rem 2rem;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   text-align: center;
-    margin: 1rem auto; /* giver luft mellem knapperne */
+    margin: 1rem auto; 
 }
 
 .button_beige {
-    width: 180px;  /* Sætter en fast bredde */
-    height:50px;  /* Sætter en fast højde */
-  background-color: #F7F1E6 ; /* grønlig farve – justér hvis den er lidt forkert */
+    width: 180px;  
+    height:50px;  
+  background-color: #F7F1E6 ; 
   border: none;
-  border-radius: 100px; /* gør knapperne helt runde */
+  border-radius: 100px; 
   padding: 0.8rem 2rem;
   font-size: 1rem;
   cursor: pointer;
-  margin: 0 1rem; /* giver luft mellem knapperne */
+  margin: 0 1rem; 
   transition: transform 0.2s ease;
   text-align: center;
+}
+
+.center_knap{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .button:hover{
     transform: scale(1.05);   
-}
-
-.button-group:hover {
-  transform: scale(1.05); /* let zoom ved hover – valgfrit */
 }
 
 img {
@@ -182,7 +207,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center; /* centrerer indholdet vandret */
- background-color: #F7F1E6; /* beige baggrundsfarve */
+ background-color: #F7F1E6; 
 }
 
 .pink{
@@ -209,8 +234,70 @@ p {
 }
 
  
-@media (max-width: 768px) 
+@media (min-width: 768px) {
+    .ramme{
+       max-width: 80%;
+       margin: 0 auto;
+       margin-top: 40px;
+       height: 300px;
+    }
+
+    .button-group {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.button{ 
+    margin: 0 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem; 
    
+}
 
+.billede_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    gap: 10rem;
+}
 
+.news-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.drink,
+.emmely,
+.studio,
+.freddieo {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+    border-radius: 80px;
+}
+
+.drink{
+    margin: 0;     
+    padding: 0; 
+}   
+
+    .beige_box{
+    max-width: 700px;
+    height: 200px;
+}
+
+.pink{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+}
+    
 </style>
