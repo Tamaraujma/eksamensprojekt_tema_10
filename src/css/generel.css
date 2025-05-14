@@ -8,3 +8,40 @@
 img {
   max-width: 100%;
 }
+
+h1 {
+  font-family: "Judson";
+  font-size: 50px;
+}
+
+h2 {
+  font-family: "Abhaya Libre";
+  font-size: 45px;
+}
+
+h3 {
+  font-family: "Abhaya Libre";
+  font-size: 30px;
+}
+
+p {
+  font-family: "Abhaya Libre";
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+}
