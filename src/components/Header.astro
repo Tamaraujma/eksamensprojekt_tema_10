@@ -3,15 +3,15 @@
 
 ---
  <header class="header">
-  <div class="burger">
+    <div class="logo">
+    <img src="/logo.svg" alt="Fred's logo" />
+  </div>
+  <div class="burger" id="burger">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <div class="logo">
-    <img src="/logo.svg" alt="Fred's logo" />
-  </div>
 
   <nav id="nav">
     <ul class="menu">
@@ -25,7 +25,13 @@
 <script src="/src/js/burger.js"></script>
 
 <style>
-  header {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,8 +77,7 @@
   }
 
   @media (max-width: 768px) {
-
-     header {
+     .header {
       flex-direction: row;
       justify-content: space-between;
     }
