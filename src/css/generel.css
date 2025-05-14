@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 /* billeder bliver sat til max-width 100% */
+
 img {
   max-width: 100%;
 }
