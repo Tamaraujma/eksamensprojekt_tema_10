@@ -33,10 +33,11 @@ import door from "../assets/IMG_4577_result.webp"
 <p>Every morning, we head to Inco to buy what we need for the day. We aim to choose organic products whenever possible, and our chicken is halal.</p>
 <p>At Fred's, it's important to us that everyone feels welcome!</p>
 </div>
-
+<div class="menu_3_img-container">
 <img src={salon.src} alt="Salon" class="menu_3_img" />
 <img src={outside.src} alt="Outside" class="menu_3_img" />
 <img src={door.src} alt="Door" class="menu_3_img"/>
+</div>
 
 </Layout>
 <style>
@@ -46,6 +47,9 @@ img {
   max-width: 100%;
 }
 
+h1{
+  text-align: center;
+ }
 
 .frametext_1 h2, .frametext_3 h2{
   text-align: center;
@@ -71,17 +75,38 @@ max-width: 380px;
 }
 .menu_3_img {
   border-radius: 80px;
-  width: 80%;             /* Gør billederne bredere, juster procenten for ønsket bredde */
+  width: 80%;             /* Gør billederne bredere */
   max-width: 300px;       /* Maksimal bredde for billederne */
-  aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */  object-fit: cover;
+  aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
+  object-fit: cover;      /* Billedet fylder containeren uden at forvrænge */
   display: block;         /* Gør det muligt at centrere med margin */
-  margin: 1rem auto;  
-  margin-bottom: 40px;    /* Mere luft mellem billederne og centreret på siden */
+  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
+  margin-bottom: 40px;    /* Mere luft mellem billederne */
 }
+
 
 
 
 /* til computerversion */
 @media screen and (min-width: 768px) {
-}   
+
+  .collab_emmely {
+    display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
+    justify-content: space-between; /* Placerer elementerne med luft mellem dem */
+    align-items: center;   /* Centrerer elementerne lodret */
+    padding: 50px
+}  
+.collab_emmely img {
+  width: 35%;
+  margin-left: 100px;
+}
+
+.menu_3_img-container {
+  display: flex;            /* Gør containeren til en flex container */
+  justify-content: center;  /* Centrerer billederne horisontalt */
+  width: 100%;              /* Containeren fylder hele bredden */
+  margin: 0 auto;           /* Centrerer containeren på siden */
+}    
+  }
+
 </style>
