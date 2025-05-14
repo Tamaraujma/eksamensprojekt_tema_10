@@ -1,5 +1,6 @@
 ---
-
+import insta_footer from '../assets/insta_footer.png';
+import tiktok_footer from '../assets/tiktok_footer.png';
 ---
 
 <footer>
@@ -14,13 +15,13 @@
     </div>
     <div class="center_footer">
         <h3>Check out our Social Media Channels</h3>
-        <img src="" alt="">
-        <img src="" alt="">
+        <img class="insta_footer" src={insta_footer.src} alt="insta footer">
+         <img class="tiktok_footer" src={tiktok_footer.src} alt="insta footer">
     </div>
     <div class="right_footer">
         <h3>For bookings at Studio 27 and Freddie'o:</h3>
-        <p>Studio 27: </p>
-        <p>Freddie'o:</p>
+       <p> <a href="https://josefinejensen.planway.com/" class="studio27_link">Studio 27</a></p>
+       <p> <a href="https://freddieohair-26975.planway.com/" class="freddieo_link">Freddie'o</a></p>
     </div>
     </div>
 </footer>
@@ -31,7 +32,23 @@
     text-align: center;
     padding: 20px;
 }
- @media screen and (min-width: 750px) { 
+.insta_footer{
+    width: 35px;
+    height: auto;
+    margin-right: 20px;
+    text-align: center;
+}
+.tiktok_footer{
+    width: 30px;
+    height: auto;
+    text-align: center;
+}
+.studio27_link, .freddieo_link{
+    color:black;            
+    text-decoration: underline; 
+}
+
+ @media screen and (min-width: 900px) { 
     .footer{
         display: flex; /* Optager 1 del af pladsen */
     }
@@ -43,11 +60,18 @@
         flex: 1; /* Optager 1 del af pladsen */
         text-align: center;
     }
-    .right_footer{
-        flex: 1; /* Optager 1 del af pladsen */
-        text-align: right;
+    .right_footer {
+       flex: 1;
+       text-align: right;
+}
+    .insta_footer{
+        width: 45px;
+        height: auto;
     }
- }
+    .tiktok_footer{
+        width: 40px;
+        height: auto;
+    }
+}
 
-    
 </style>
