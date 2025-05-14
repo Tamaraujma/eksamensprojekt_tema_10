@@ -10,6 +10,13 @@ img {
   max-width: 100%;
 }
 
+html {
+  --grøn: rgba(189, 204, 165, 1);
+  --lyserød: rgba(250, 113, 156, 1);
+  --beige: rgba(247, 241, 230, 1);
+  --sort: rgba(0, 0, 0, 1);
+  --hvid: rgba(255, 254, 254, 1);
+}
 h1 {
   font-family: "Judson";
   font-size: 32px;
@@ -24,12 +31,21 @@ h3 {
   font-family: "Abhaya Libre";
   font-size: 20px;
 }
-
+h4 {
+  font-family: "Abhaya Libre";
+  font-size: 18px;
+}
 p {
   font-family: "Abhaya Libre";
   font-size: 16px;
 }
-@media (max-width: 768px) {
+
+button {
+  font-family: "Abhaya Libre";
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
   h1 {
     font-size: 48px;
   }
@@ -42,6 +58,9 @@ p {
     font-size: 30px;
   }
 
+  h4 {
+    font-size: 22px;
+  }
   p {
     font-size: 18px;
   }
