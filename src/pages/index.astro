@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Generelt from '../src/css/generelt.css';
-import heroImage from '../assets/hero1.png';
+import heroImage from '../assets/hero.webp';
+import Logo from '../assets/logo_hero.svg';
 import Matcha1 from '../assets/IMG_4560_result.webp';
 import Latte from '../assets/IMG_4627_result.webp';
 import Matcha2 from '../assets/IMG_4601_result.webp';
@@ -11,7 +12,10 @@ import FreddieO from '../assets/FreddieO_result.webp';
 ---
 
 <Layout>
+    <div class="img_wrapper">
 	<img class="hero" src={heroImage.src} alt="Forsidebillede" />
+    <img class="overlay" src={Logo.src} alt="logo">
+</div>
     <section class="ramme">
     <h1>Welcome to Fred’s Coffeeshop!</h1>
     <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O.</p>
@@ -79,10 +83,32 @@ import FreddieO from '../assets/FreddieO_result.webp';
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   text-align: center;
   overflow: hidden;
+  border-radius: 70px;
+  max-width: 95%;
+  margin: 0 auto;
  }
+
+ .img_wrapper {
+  position: relative;
+  overflow: hidden; 
+}
+
+.img_wrapper img {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50%;
+  height: 100%; /* eller mindre, afhængigt af design */
+  z-index: 2; /* sørg for at den ligger ovenpå billedet */
+  pointer-events: none; /* valgfrit: så den ikke blokerer klik */
+}
 
  .drink{
   display: block;
@@ -248,6 +274,12 @@ p {
 
  
 @media (min-width: 768px) {
+
+    .hero{
+        height: 500px;
+    }
+
+
     .ramme{
        max-width: 80%;
        margin: 0 auto;
