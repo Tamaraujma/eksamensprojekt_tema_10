@@ -19,7 +19,7 @@ html {
 }
 h1 {
   font-family: "Judson";
-  font-size: 32px;
+  font-size: 40px;
 }
 
 h2 {
@@ -47,7 +47,7 @@ button {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 48px;
+    font-size: 50px;
   }
 
   h2 {
