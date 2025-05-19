@@ -89,27 +89,31 @@ import FreddieO from '../assets/FreddieO_result.webp';
   max-width: 95%;
   margin: 0 auto;
  }
-
- .img_wrapper {
+ .img-wrapper {
   position: relative;
-  overflow: hidden; 
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.img_wrapper img {
-  display: block;
+.hero {
   width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
 }
 
 .overlay {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50%;
-  height: 100%; /* eller mindre, afhængigt af design */
-  z-index: 2; /* sørg for at den ligger ovenpå billedet */
-  pointer-events: none; /* valgfrit: så den ikke blokerer klik */
+  top: 50%;
+  left: 50%;
+  width: 30%; /* justér hvor stor logoet skal være */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
 }
-
  .drink{
   display: block;
   margin: 1rem auto;
