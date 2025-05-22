@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import matchaIllustration from "../assets/Matcha.png"
+import salon from "../assets/IMG_4586_result.webp"
+import outside from "../assets/IMG_4543_result.webp"
+import door from "../assets/IMG_4577_result.webp"
+---
+<Layout>
+<h1>MENU</h1>
+<div class="frametext_1">
+<h2>BEHIND THE SCENES</h2>
+<p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
+<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks - from signature matchas to flavorful lattes.</p>
+
+<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going, we've got a little bit of everything.</p>
+<p>It's all made with love - and with a focus on flavor, quality, and a cozy vibe you won't find anywhere else.</p>
+</div>
+
+<div class="collab_emmely">
+<img src={matchaIllustration.src} alt="Matcha_illustration" />
+
+<div class="frametext_2">
+<h3>Available on June 1st!</h3>
+<p>In collaboration with Emmely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
+<p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
+</div>
+</div>
+
+<div class="frametext_3">
+<h2>ABOUT OUR MENU</h2>
+<p>As a newly opened coffee bar, we handle all daily shopping ourselves.</p>
+<p>Every morning, we head to Inco to buy what we need for the day. We aim to choose organic products whenever possible, and our chicken is halal.</p>
+<p>At Fred's, it's important to us that everyone feels welcome!</p>
+</div>
+<div class="menu_3_img-container">
+<img src={salon.src} alt="Salon" class="menu_3_img" />
+<img src={outside.src} alt="Outside" class="menu_3_img" />
+<img src={door.src} alt="Door" class="menu_3_img"/>
+</div>
+
+</Layout>
+<style>
+/* til mobilversion */
+    /* billeder bliver sat til max-width 100% */
+img {
+  max-width: 100%;
+}
+
+h1{
+  text-align: center;
+ }
+
+.frametext_1 h2, .frametext_3 h2{
+  text-align: center;
+}
+
+.frametext_1, .frametext_2, .frametext_3{
+border: 5px solid #FA719C;
+  padding: 20px;
+border-radius: 40px;
+margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
+max-width: 380px;
+}
+
+.collab_emmely{
+  background-color: #F7F1E6 ;
+  padding: 20px 0; /* 20px top og bund, 0px til siderne */
+
+}
+
+.collab_emmely h3{
+ color: #FA719C;
+ text-align: center;
+}
+.menu_3_img {
+  border-radius: 80px;
+  width: 80%;             
+  max-width: 300px;       /* Maksimal bredde for billederne */
+  aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
+  object-fit: cover;      /* Billedet fylder containeren uden at forvrænge */
+  display: block;         /* Gør det muligt at centrere med margin */
+  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
+  margin-bottom: 40px;    
+}
+
+
+
+
+/* til computerversion */
+@media screen and (min-width: 768px) {
+
+  .collab_emmely {
+    display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
+    justify-content: space-between; /* Placerer elementerne med luft mellem dem */
+    align-items: center;   /* Centrerer elementerne lodret */
+    padding: 50px
+}  
+.collab_emmely img {
+  width: 35%;
+  margin-left: 100px;
+}
+
+.menu_3_img-container {
+  display: flex;            /* Gør containeren til en flex container */
+  justify-content: center;  /* Centrerer billederne horisontalt */
+  width: 100%;              /* Containeren fylder hele bredden */
+  margin: 0 auto;           /* Centrerer containeren på siden */
+}    
+  }
+
+</style>

@@ -1,17 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Generelt from '../src/css/generelt.css';
-import heroImage from '../assets/Group 7.png';
+import heroImage from '../assets/hero.webp';
+import Logo from '../assets/logo_hero.svg';
 import Matcha1 from '../assets/IMG_4560_result.webp';
 import Latte from '../assets/IMG_4627_result.webp';
 import Matcha2 from '../assets/IMG_4601_result.webp';
 import Emmely from '../assets/Emmely_news_result.webp';
 import Studio27 from '../assets/Studio_27_result.webp';
-import FreddieO from '../assets/Freddieo_result.webp';
+import Freddieo from '../assets/Freddieo_result.webp';
 ---
 
 <Layout>
+    <div class="img_wrapper">
 	<img class="hero" src={heroImage.src} alt="Forsidebillede" />
+    <img class="overlay" src={Logo.src} alt="logo">
+</div>
     <section class="ramme">
     <h1>Welcome to Fred’s Coffeeshop!</h1>
     <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O.</p>
@@ -61,7 +65,7 @@ import FreddieO from '../assets/Freddieo_result.webp';
 </div>
 <div>
     <h2 class="beige_h2">FREDDIE'O</h2>
-    <img class="freddieo" src={FreddieO.src} alt="freddieo">
+    <img class="freddieo" src={Freddieo.src} alt="freddieo">
      <div class="ramme_beige">
     <p>Freddie’O is owned by Frederikke Sophie, sister of Studio 27’s founder, Josefine, and is located inside the salon in the heart of Copenhagen.
     You can book your appointment to get fresh hair  below!</p>
@@ -79,10 +83,38 @@ import FreddieO from '../assets/Freddieo_result.webp';
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   text-align: center;
   overflow: hidden;
+  border-radius: 70px;
+  max-width: 100%;
+  margin: 0 auto;
  }
+
+ .img_wrapper {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%; /* justér hvor stor logoet skal være */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
 
  .drink{
   display: block;
@@ -257,7 +289,16 @@ p {
 }
 
  
+
 @media (min-width: 900px) {
+
+    .hero{
+        height: 500px;
+        width: 100%;
+    }
+
+
+
     .ramme{
        max-width: 72%;
        margin: 0 auto;
