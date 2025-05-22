@@ -22,8 +22,8 @@ import Freddieo from '../assets/Freddieo_result.webp';
     <p>Fred's is a family-owned business, founded by the creators of the two salons. Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
     <p>Find us behind the nail and hair salon!</p>
     <div class="button-group">
-    <button class="button">FRED'S</button>
-    <button class="button"> MENU</button> 
+    <a href="/om_freds" class="button">FRED'S</a>
+    <a href="/menu" class="button">MENU</a>
     </div>
   
 </section>
@@ -42,14 +42,14 @@ import Freddieo from '../assets/Freddieo_result.webp';
     <p>In collaboration with influencer Emmely Moraitis, we’ve created a Pistachio Matcha drink – available at Fred’s starting June 1st, 2025!</p>
 </div>
 </div>
-<button class="button">READ MORE</button>
+<a href="/benefits" class="button">READ MORE</a>
 </section>
 <h2>FOR YOU</h2>
 <div class="beige_box">
     <p>Fred’s is constantly evolving, which is why we collaborate with various brands and influencers. We also want to give you, our customers, something in return. Learn more about exclusive benefits and collaborations under our Treasures section!</p>
 </div>
 <div class="center_knap"> 
-   <button class="button">TREASURES</button> 
+    <a href="benefits" class="button">TREASURES</a>
 </div>
 <section class="pink">
     <div>
@@ -60,7 +60,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
     </p>
 </div>
 <div class="center_knap">
-    <button class="button_beige">BOOKINGS</button>
+    <a href="https://josefinejensen.planway.com/" class="button_beige">BOOKINGS</a>
 </div>
 </div>
 <div>
@@ -71,7 +71,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
     You can book your appointment to get fresh hair  below!</p>
 </div>
 <div class="center_knap">
-    <button class="button_beige">BOOKINGS</button>
+    <a href="https://freddieohair-26975.planway.com/" class="button_beige">BOOKINGS</a>
 </div>
 </div>
 </section>
@@ -151,8 +151,8 @@ import Freddieo from '../assets/Freddieo_result.webp';
  }
 
  .button {
-    width: 180px;  
-    height:50px;  
+    width: 150px;  
+    height:25px;  
   background-color: #c8d3ae; 
   border: none;
   border-radius: 100px; 
@@ -164,9 +164,14 @@ import Freddieo from '../assets/Freddieo_result.webp';
     margin: 1rem auto; 
 }
 
+a{
+    text-decoration: none;
+    color: black
+}
+
 .button_beige {
-    width: 180px;  
-    height:50px;  
+    width: 150px;  
+    height:25px;  
   background-color: #F7F1E6 ; 
   border: none;
   border-radius: 100px; 
