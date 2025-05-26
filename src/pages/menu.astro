@@ -1,90 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import '../src/css/generelt.css';
-
 import matchaIllustration from "../assets/Matcha.png"
 import salon from "../assets/IMG_4586_result.webp"
 import outside from "../assets/IMG_4543_result.webp"
 import door from "../assets/IMG_4577_result.webp"
-
-
-const url= "https://mzgerdkdpiuiptojhrqo.supabase.co/rest/v1/freds_menu?select=*"
-  const key= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16Z2VyZGtkcGl1aXB0b2pocnFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2OTkxMzksImV4cCI6MjA2MjI3NTEzOX0.gxYokqCVuVtoyOdGDo02azparnJlGTlrPeACQ6p3300"
-   const options = {
-            headers: {
-                apikey: key,
-            },
-        };
-
-const data = await fetch(url, options).then((res) => res.json())
-
-console.log(data)
-
 ---
 <Layout>
-  <h1>MENU</h1>
-  <section>
-  <div class="drink_container">
-    <div class="menu_drink_box">
-    <img src="/logo.svg" alt="Logo">
-  <h1>To Drink</h1>
- 
-  {data.map ((menu) => {
-    if (menu.menu_category == "Drink") {
-      return (
-        <article class="menu_item">
-            <p>{menu.slug} - {menu.price}</p>
-        </article>
-    );
-  } 
-})}
-
-  {data.map ((menu) => {
-    if (menu.menu_category == "Drink_2") {
-      return (
-        <article class="menu_item">
-            <p>{menu.slug} - {menu.price}</p>
-        </article>
-    );
-  }
-})}
-</div>
-
-    <div class="menu_new_box">
-    <h2>New</h2>
-    <p>Try our "Foam Of The Season" for your matcha or latte</p>
-    <p>3,-</p>
-  {data.map ((menu) => {
-  if (menu.new) {
-    return (
-        <article class="menu_item">
-            <p>{menu.slug}</p>
-        </article>
-    );
-  }
-  })}
-  <p class="footer_note">Ask the baristas about any allergies</p>
-  </div>
-</div>
-
-  <div class="menu_food_box">
-  <img src="/logo.svg" alt="Logo">
- <h1>To Eat</h1>
- 
-  {data.map ((menu) => {
-  if (menu.menu_category == "Food") {
-    return (
-        <article class="menu_item">
-            <p>{menu.slug} - {menu.price}</p>
-        </article>
-    );
-  }
-  })}
-  <p class="footer_note">Ask the baristas about any allergies</p>
-</div>
-</section>
-
-
+<h1>MENU</h1>
 <div class="frametext_1">
 <h2>BEHIND THE SCENES</h2>
 <p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
@@ -122,110 +45,6 @@ console.log(data)
     /* billeder bliver sat til max-width 100% */
 img {
   max-width: 100%;
-}
-
-section{
-  margin-left: 2rem;
-  margin-top: 3rem;
-}
-
-.drink_container, 
-.menu_food_box{
-display: grid;
-grid-column: span 1;
-grid-row: 1/-1; 
-grid-template-columns: 1fr;
-margin-bottom: 2rem;
-}
-
-.menu_drink_box{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.menu_drink_box img,
-.menu_drink_box h1 {
-  grid-column: 1 / -1; /* spænder over begge kolonner */
-  justify-self: center; /* centrer indholdet horisontalt */
-}
-
-.menu_drink_box,
-.menu_food_box{
-  background-color: var(--lyserød);
-  color: var(--sort);
-  font-family: "Sometype Mono";
-  width: 470px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.menu_item p{
-  font-family: "Sometype Mono";
-  text-align: left;
-  font-size: 14px;
-  margin-left: 2rem;
-}  
-
-.menu_drink_box h1, 
-.menu_food_box h1{
-  font-family: "Sometype Mono";
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.menu_drink_box h1{
-  margin-top: 1rem;
-}
-.menu_food_box{
-  min-height: 800px;
-}
-
-.menu_drink_box p{
-  line-height: 2;
-}
-
-.menu_food_box p{
-padding-left: 2rem;
-margin-left: 2rem;
-margin-right: 2rem;
-}
-
-.menu_drink_box img, 
-.menu_food_box img{
-  max-width: 300px;
-  margin: 0 auto;
-  margin-top: 2rem;
-}
-.menu_new_box {
-  background-color: var(--lyserød);
-  width: 470px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 3rem; /* for luft i bunden */
-  align-items: center;
-}
-
-.menu_new_box h2{
-  font-family: "Sometype Mono";
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.menu_new_box p{
-  font-family: "Sometype Mono";
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-}
-.footer_note{
-  margin-top: 2rem;
-  font-family: "Sometype Mono";
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 14px;
 }
 
 h1{
@@ -267,47 +86,10 @@ max-width: 380px;
 
 
 
-@media screen and (min-width: 1270px){
-section{
-  display: grid;
-   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr; 
-  margin-left: 4rem;
-  }
-
-  .drink_container{
-  grid-column: 1/2;
-  grid-row: 1/-1;
-  }
-   
-  .menu_food_box{
-  grid-column: 2/3;
-  grid-row: 1/-1;
-} 
-
-.menu_food_box h1{
-  margin-top: -3rem
-}
-.menu_food_box p{
-  padding: 0;
-  margin-left: 2rem;
-}
-  .menu_drink_box,
-  .menu_food_box{
-    width: 600px;
-  } 
-
-  .menu_new_box{
-    width: 600px;
-  }
-
-  .menu_item{
-    text-align: left;
-  }
-}
 
 /* til computerversion */
 @media screen and (min-width: 768px) {
+
   .collab_emmely {
     display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
     justify-content: space-between; /* Placerer elementerne med luft mellem dem */
