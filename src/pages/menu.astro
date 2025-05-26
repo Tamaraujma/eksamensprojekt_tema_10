@@ -11,9 +11,9 @@ import door from "../assets/IMG_4577_result.webp"
 <div class="frametext_1">
 <h2>BEHIND THE SCENES</h2>
 <p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
-<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks - from signature matchas to flavorful lattes.</p>
+<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks</p> <p>- from signature matchas to flavorful lattes.</p>
 
-<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going, we've got a little bit of everything.</p>
+<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going,</p> <p>we've got a little bit of everything.</p>
 <p>It's all made with love - and with a focus on flavor, quality, and a cozy vibe you won't find anywhere else.</p>
 </div>
 
@@ -30,7 +30,8 @@ import door from "../assets/IMG_4577_result.webp"
 <div class="frametext_3">
 <h2>ABOUT OUR MENU</h2>
 <p>As a newly opened coffee bar, we handle all daily shopping ourselves.</p>
-<p>Every morning, we head to Inco to buy what we need for the day. We aim to choose organic products whenever possible, and our chicken is halal.</p>
+<p>Every morning, we head to Inco to buy what we need for the day.</p> 
+<p>We aim to choose organic products whenever possible, and our chicken is halal.</p>
 <p>At Fred's, it's important to us that everyone feels welcome!</p>
 </div>
 <div class="menu_3_img-container">
@@ -47,6 +48,121 @@ img {
   max-width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+h3, h2{
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 2;
+}
+
+section{
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+
+.drink_container, 
+.menu_food_box{
+display: grid;
+grid-column: span 1;
+grid-row: 1/-1; 
+grid-template-columns: 1fr;
+margin-bottom: 2rem;
+}
+
+.menu_drink_box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.menu_drink_box img,
+.menu_drink_box h1 {
+  grid-column: 1 / -1; /* spænder over begge kolonner */
+  justify-self: center; /* centrer indholdet horisontalt */
+}
+
+.menu_drink_box,
+.menu_food_box{
+  background-color: var(--lyserød);
+  color: var(--sort);
+  font-family: "Sometype Mono";
+  width: 470px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu_item p{
+  font-family: "Sometype Mono";
+  text-align: left;
+  font-size: 14px;
+  margin-left: 2rem;
+}  
+
+.menu_drink_box h1, 
+.menu_food_box h1{
+  font-family: "Sometype Mono";
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.menu_drink_box h1{
+  margin-top: 1rem;
+}
+.menu_food_box{
+  min-height: 800px;
+}
+
+.menu_drink_box p{
+  line-height: 2;
+}
+
+.menu_food_box p{
+padding-left: 2rem;
+margin-left: 2rem;
+margin-right: 2rem;
+}
+
+.menu_drink_box img, 
+.menu_food_box img{
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.menu_new_box {
+  background-color: var(--lyserød);
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem; /* for luft i bunden */
+  align-items: center;
+}
+
+.menu_new_box h2{
+  font-family: "Sometype Mono";
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.menu_new_box p{
+  font-family: "Sometype Mono";
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+.footer_note{
+  margin-top: 2rem;
+  font-family: "Sometype Mono";
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 14px;
+}
+
+>>>>>>> 0270e60f835ce660f473279c735f174436bdf7db
 h1{
   text-align: center;
  }
@@ -73,15 +189,16 @@ max-width: 380px;
  color: #FA719C;
  text-align: center;
 }
+
 .menu_3_img {
   border-radius: 80px;
-  width: 80%;             
+  width: 80%;             /* Gør billederne bredere */
   max-width: 300px;       /* Maksimal bredde for billederne */
   aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
   object-fit: cover;      /* Billedet fylder containeren uden at forvrænge */
   display: block;         /* Gør det muligt at centrere med margin */
   margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
-  margin-bottom: 40px;    
+  margin-bottom: 40px;    /* Mere luft mellem billederne */
 }
 
 
@@ -90,23 +207,48 @@ max-width: 380px;
 /* til computerversion */
 @media screen and (min-width: 768px) {
 
+<<<<<<< HEAD
+=======
+  .frametext_1{
+max-width: 1050px;
+height: 320px;
+  }
+
+  .frametext_2{
+    max-width: 400px;
+    height: 450px;
+  }
+
+  .frametext_3{
+    max-width: 1050px;
+    height: 300px;
+  }
+
+>>>>>>> 0270e60f835ce660f473279c735f174436bdf7db
   .collab_emmely {
     display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
     justify-content: space-between; /* Placerer elementerne med luft mellem dem */
     align-items: center;   /* Centrerer elementerne lodret */
-    padding: 50px
+    margin: 0 auto;
 }  
 .collab_emmely img {
-  width: 35%;
-  margin-left: 100px;
+  width: 34%;
+  margin-left: 165px;
 }
 
 .menu_3_img-container {
-  display: flex;            /* Gør containeren til en flex container */
-  justify-content: center;  /* Centrerer billederne horisontalt */
-  width: 100%;              /* Containeren fylder hele bredden */
-  margin: 0 auto;           /* Centrerer containeren på siden */
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto; 
 }    
+
+.menu_3_img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 2.6rem; /* Giver lidt luft mellem billederne */
+}
   }
 
 </style>
