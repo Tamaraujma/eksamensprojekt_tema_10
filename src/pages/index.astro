@@ -1,8 +1,378 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Generelt from '../src/css/generelt.css';
+import heroImage from '../assets/hero.webp';
+import Logo from '../assets/logo_hero.svg';
+import Matcha1 from '../assets/IMG_4560_result.webp';
+import Latte from '../assets/IMG_4627_result.webp';
+import Matcha2 from '../assets/IMG_4601_result.webp';
+import Emmely from '../assets/Emmely_news_result.webp';
+import Studio27 from '../assets/Studio_27_result.webp';
+import Freddieo from '../assets/Freddieo_result.webp';
 ---
 
 <Layout>
-	
+    <div class="img_wrapper">
+	<img class="hero" src={heroImage.src} alt="Forsidebillede" />
+    <img class="overlay" src={Logo.src} alt="logo">
+</div>
+    <section class="ramme">
+    <h1>Welcome to Fred’s Coffeeshop!</h1>
+    <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O.</p>
+    <p>Fred's is a family-owned business, founded by the creators of the two salons. Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
+    <p>Find us behind the nail and hair salon!</p>
+    <div class="button-group">
+    <a href="/om_freds" class="button">FRED'S</a>
+    <a href="/menu" class="button">MENU</a>
+    </div>
+  
+</section>
+<div class="billede_group">
+<img class="drink" src={Matcha1.src} alt="matcha">
+<img class="drink" src={Latte.src} alt="latte">
+<img class="drink" src={Matcha2.src} alt="matcha2">
+</div>
+<section class="beige">
+<h2>NEWS</h2>
+<div class="news-content">
+    <div>
+<img class="emmely" src={Emmely.src} alt="Emmely"></div>
+<div class="ramme_pink">
+    <h4>EMMELY MORAITIS</h4>
+    <p>In collaboration with influencer Emmely Moraitis, we’ve created a Pistachio Matcha drink – available at Fred’s starting June 1st, 2025!</p>
+</div>
+</div>
+<a href="/fordele" class="button">READ MORE</a>
+</section>
+<h2>FOR YOU</h2>
+<div class="beige_box">
+    <p>Fred’s is constantly evolving, which is why we collaborate with various brands and influencers. We also want to give you, our customers, something in return. Learn more about exclusive benefits and collaborations under our Treasures section!</p>
+</div>
+<div class="center_knap"> 
+    <a href="/fordele" class="button">TREASURES</a>
+</div>
+<section class="pink">
+    <div>
+    <h2 class="beige_h2">STUDIO 27</h2>
+    <img class="studio" src={Studio27.src} alt="studio27">
+    <div class="ramme_beige">
+        <p>Studio 27 is a nail salon owned by Josefine and run together with a talented team of professionals. The salon offers  high-quality treatments in the heart of Copenhagen. Book your appointment below and treat yourself to a fresh set of nails!
+    </p>
+</div>
+<div class="center_knap">
+    <a href="https://josefinejensen.planway.com/" class="button_beige">BOOKINGS</a>
+</div>
+</div>
+<div>
+    <h2 class="beige_h2">FREDDIE'O</h2>
+    <img class="freddieo" src={Freddieo.src} alt="freddieo">
+     <div class="ramme_beige">
+    <p>Freddie’O is owned by Frederikke Sophie, sister of Studio 27’s founder, Josefine, and is located inside the salon in the heart of Copenhagen.
+    You can book your appointment to get fresh hair  below!</p>
+</div>
+<div class="center_knap">
+    <a href="https://freddieohair-26975.planway.com/" class="button_beige">BOOKINGS</a>
+</div>
+</div>
+</section>
 </Layout>
+
+
+<style>
+ .hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 70px;
+  max-width: 100%;
+  margin: 0 auto;
+ }
+
+ .img_wrapper {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%; /* justér hvor stor logoet skal være */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+ .drink{
+  display: block;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+    border-radius: 80px;
+}
+
+.emmely,
+.studio,
+.freddieo {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+        border-radius: 80px;
+}
+
+.button-group {
+    display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+ }
+
+ .center_knap {
+    display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+ }
+
+ .button {
+    width: 180px;  
+    height:50px;  
+  background-color: #c8d3ae; 
+  border: none;
+  border-radius: 100px; 
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+    margin: 1rem auto; 
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+.button_beige {
+    width: 180px;  
+    height:50px;  
+  background-color: #F7F1E6 ; 
+  border: none;
+  border-radius: 100px; 
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 1rem; 
+  transition: transform 0.2s ease;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.center_knap{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.button:hover{
+    transform: scale(1.05);   
+}
+
+.button_beige:hover{
+    transform: scale(1.05);   
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.ramme{
+    border: 5px solid #FA719C;
+    padding: 20px;
+    border-radius: 40px;
+    margin: 1rem auto;
+    max-width: 330px;
+    height: auto;
+}
+
+.ramme_pink{
+    border: 5px solid #FA719C;
+    padding: 1rem;
+    border-radius: 40px;
+    margin: 1rem auto;
+    max-width: 285px;
+}
+
+.ramme_beige{
+    border: 4px solid #F7F1E6;
+    padding: 1rem;
+    border-radius: 40px;
+    margin: 1rem auto;
+    max-width: 282px;
+    text-align: center;
+}
+
+.ramme_beige p{
+    color: #F7F1E6;
+    align-items: center;
+    margin-top: 0;
+}
+
+
+.beige_box{
+    border: 4px;
+    background-color: #F7F1E6;
+    padding: 2rem;
+    border-radius: 40px;
+    margin: 1rem auto;
+    max-width: 300px;
+    height: auto;
+}
+
+.beige {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrerer indholdet vandret */
+ background-color: #F7F1E6; 
+}
+
+.pink{
+    display: flex;
+  flex-direction: column;
+  align-items: center; /* centrerer indholdet vandret */
+    background-color: #FA719C;
+    text-align: left;
+    padding: 1rem;
+}
+
+.pink h3{
+    color: #F7F1E6;
+}
+
+h2, h3{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+h4{
+    margin-top: 0;
+}
+
+
+.beige_h2{
+    color: #F7F1E6;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+p {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+ 
+
+@media (min-width: 900px) {
+
+    .hero{
+        height: 500px;
+        width: 100%;
+    }
+
+
+
+    .ramme{
+       max-width: 72%;
+       margin: 0 auto;
+       margin-top: 40px;
+       height: 350px;
+    }
+
+    .button-group {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.button{ 
+    margin: 0 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem; 
+   
+}
+
+.billede_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    gap: 5rem;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.drink,
+.emmely,
+.studio,
+.freddieo {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+    border-radius: 80px;
+}
+
+.drink{
+    margin: 0;     
+    padding: 0; 
+}   
+
+    .beige_box{
+    max-width: 500px;
+    height: 200px;
+}
+
+.pink{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+p {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+
+}
+    
+</style>

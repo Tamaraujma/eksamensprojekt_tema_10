@@ -3,36 +3,44 @@
 
 ---
  <header class="header">
-  <div class="burger">
+    <div class="logo">
+    <img src="/logo.svg" alt="Fred's logo" />
+    <a href="/index"></a>
+  </div>
+  <div class="burger" id="burger">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <div class="logo">
-    <img src="/logo.svg" alt="Fred's logo" />
-  </div>
 
   <nav id="nav">
     <ul class="menu">
-      <li><a href="/">FORSIDE</a></li>
+      <li><a href="/">HOME</a></li>
       <li><a href="/menu">MENU</a></li>
-      <li><a href="/om_freds">OM FRED'S</a></li>
-      <li><a href="/fordele">FORDELE</a></li>
+      <li><a href="/om_freds">ABOUT FRED'S</a></li>
+      <li><a href="/fordele">BENEFITS</a></li>
     </ul>
   </nav>
 </header>
 <script src="/src/js/burger.js"></script>
 
 <style>
-  header {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 1rem 2rem;
     background-color: #fff;
-    border-bottom: 5px solid rgba(189, 204, 165, 1);
+    border-bottom: 5px solid var(--grøn);
     position: relative;
+    margin-bottom: 2rem;
   }
 
   .logo img {
@@ -48,12 +56,12 @@
 
   nav a {
     text-decoration: none;
-    color: black;
+    color: var(--sort);
     font-size: 18px;
   }
 
   nav a:hover {
-    color: rgba(250, 113, 156, 1);
+    color:var(--lyserød);
   }
 
   /* Burger menu */
@@ -67,12 +75,11 @@
   .burger div {
     width: 20px;
     height: 3px;
-    background-color: rgba(189, 204, 165, 1);
+    background-color: var(--grøn);
   }
 
   @media (max-width: 768px) {
-
-     header {
+     .header {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -80,12 +87,12 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #fff;
+      background-color: var(--hvid);
       width: 100%;
       display: none;
       padding: 1rem 2rem;
       z-index: 10;
-    border: 5px solid rgba(189, 204, 165, 1);
+    border: 5px solid var(--grøn);
     }
 
     nav.active {
