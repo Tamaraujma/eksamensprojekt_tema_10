@@ -5,9 +5,86 @@ import matchaIllustration from "../assets/Matcha.png"
 import salon from "../assets/IMG_4586_result.webp"
 import outside from "../assets/IMG_4543_result.webp"
 import door from "../assets/IMG_4577_result.webp"
+
+
+const url= "https://mzgerdkdpiuiptojhrqo.supabase.co/rest/v1/freds_menu?select=*"
+  const key= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16Z2VyZGtkcGl1aXB0b2pocnFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2OTkxMzksImV4cCI6MjA2MjI3NTEzOX0.gxYokqCVuVtoyOdGDo02azparnJlGTlrPeACQ6p3300"
+   const options = {
+            headers: {
+                apikey: key,
+            },
+        };
+
+const data = await fetch(url, options).then((res) => res.json())
+
+console.log(data)
+
 ---
 <Layout>
-<h1>MENU</h1>
+  <h1>MENU</h1>
+  <section>
+  <div class="drink_container">
+    <div class="menu_drink_box">
+    <img src="/logo.svg" alt="Logo">
+  <h1>To Drink</h1>
+ 
+  {data.map ((menu) => {
+    if (menu.menu_category == "Drink") {
+      return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  } 
+})}
+
+  {data.map ((menu) => {
+    if (menu.menu_category == "Drink_2") {
+      return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  }
+})}
+</div>
+
+    <div class="menu_new_box">
+    <h2>New</h2>
+    <p>Try our "Foam Of The Season" for your matcha or latte</p>
+    <p>3,-</p>
+  {data.map ((menu) => {
+  if (menu.new) {
+    return (
+        <article class="menu_item">
+            <p>{menu.slug}</p>
+        </article>
+    );
+  }
+  })}
+  <p class="footer_note">Ask the baristas about any allergies</p>
+  </div>
+</div>
+
+  <div class="menu_food_box">
+  <img src="/logo.svg" alt="Logo">
+ <h1>To Eat</h1>
+ 
+  {data.map ((menu) => {
+  if (menu.menu_category == "Food") {
+    return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  }
+  })}
+  <p class="footer_note">Ask the baristas about any allergies</p>
+</div>
+</section>
+
+
+
 <div class="frametext_1">
 <h2>BEHIND THE SCENES</h2>
 <p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
@@ -48,8 +125,6 @@ img {
   max-width: 100%;
 }
 
-<<<<<<< HEAD
-=======
 h3, h2{
   margin-bottom: 15px;
 }
@@ -162,7 +237,6 @@ margin-right: 2rem;
   font-size: 14px;
 }
 
->>>>>>> 0270e60f835ce660f473279c735f174436bdf7db
 h1{
   text-align: center;
  }
@@ -207,8 +281,6 @@ max-width: 380px;
 /* til computerversion */
 @media screen and (min-width: 768px) {
 
-<<<<<<< HEAD
-=======
   .frametext_1{
 max-width: 1050px;
 height: 320px;
@@ -224,7 +296,6 @@ height: 320px;
     height: 300px;
   }
 
->>>>>>> 0270e60f835ce660f473279c735f174436bdf7db
   .collab_emmely {
     display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
     justify-content: space-between; /* Placerer elementerne med luft mellem dem */
