@@ -94,12 +94,15 @@ console.log(data)
 </div>
 
 <div class="collab_emmely">
-<img src={matchaIllustration.src} alt="Matcha_illustration" />
-
+  <div class="flex">
+<div>
+<img class="matcha_img" src={matchaIllustration.src} alt="Matcha_illustration"/>
+</div>
 <div class="frametext_2">
 <h3>Available on June 1st!</h3>
 <p>In collaboration with Emmely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
 <p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
+</div>
 </div>
 </div>
 
@@ -119,7 +122,7 @@ console.log(data)
 </Layout>
 <style>
 /* til mobilversion */
-    /* billeder bliver sat til max-width 100% */
+
 img {
   max-width: 100%;
 }
@@ -244,7 +247,7 @@ h1{
   text-align: center;
 }
 
-.frametext_1, .frametext_2, .frametext_3{
+.frametext_1, .frametext_3{
 border: 5px solid #FA719C;
   padding: 20px;
 border-radius: 40px;
@@ -252,15 +255,34 @@ margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
 max-width: 380px;
 }
 
+.frametext_2{
+  border: 5px solid #FA719C;
+  padding: 20px;
+border-radius: 40px;
+max-width: 380px;
+}
+
 .collab_emmely{
   background-color: #F7F1E6 ;
   padding: 20px 0; /* 20px top og bund, 0px til siderne */
+}
 
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .collab_emmely h3{
  color: #FA719C;
  text-align: center;
+}
+
+.matcha_img {
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .menu_3_img {
@@ -276,7 +298,7 @@ max-width: 380px;
 
 
 
-@media screen and (min-width: 1270px){
+@media screen and (min-width: 600px){
 section{
   display: grid;
    grid-template-columns: 1fr 1fr;
@@ -313,6 +335,18 @@ section{
   .menu_item{
     text-align: left;
   }
+  
+  .menu_3_img-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+  }
+
+  .frametext_1{
+    height: 450px;
+    max-width: 380px;;
+  }
 }
 
 /* til computerversion */
@@ -324,8 +358,8 @@ height: 300px;
   }
 
   .frametext_2{
-    max-width: 400px;
-    height: 450px;
+    max-width: 380px;
+    height: 420px;
   }
 
   .frametext_3{
@@ -333,16 +367,21 @@ height: 300px;
     height: 250px;
   }
 
-  .collab_emmely {
-    display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
-    justify-content: space-between; /* Placerer elementerne med luft mellem dem */
-    align-items: center;   /* Centrerer elementerne lodret */
-    margin: 0 auto;
-}  
-.collab_emmely img {
-  width: 34%;
-  margin-left: 165px;
+  .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
+.matcha_img {
+  max-width: 460px;
+  height: auto;
+  margin: 0;
+  margin-right: 3rem;
+}
+
 
 .menu_3_img-container {
   display: flex;
@@ -355,7 +394,7 @@ height: 300px;
   width: 100%;
   max-width: 300px;
   height: auto;
-  margin: 0 2.6rem; /* Giver lidt luft mellem billederne */
+  margin: 0 1.5rem; /* Giver lidt luft mellem billederne */
 }
   }
 
