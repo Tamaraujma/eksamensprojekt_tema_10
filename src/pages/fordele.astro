@@ -139,6 +139,7 @@ h1{
   
 }
 
+
 .fordele_1-1-1 div[class^="fordele-tekst-"] {
   display: none;
   padding: 2rem;
@@ -153,6 +154,9 @@ h1{
   flex-direction: column;
    min-width: 300px; 
 }
+.fordele_1-1-1 div[class^="fordele-tekst-"] {
+  display: none;
+}
 
 .arrow {
   position: absolute;
@@ -166,6 +170,10 @@ h1{
   to   { opacity: 1; }
 }
 
+.fordele_1-1-1 button.open .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
 h1{
     text-align: center;
 }
