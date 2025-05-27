@@ -1,0 +1,464 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Friends from '../assets/Friend_of_freds.png';
+import Emmely from '../assets/Emmely_result.webp';
+import '../css/generel.css';
+
+---
+
+<Layout>
+   
+<h1>BENEFITS</h1>
+ <div class="fordele_1-1-1">
+    <div class="fordele_boks">
+  <button class="fordele-overskrift-1">10% off as an Energii member
+      <span class="arrow">↓</span>
+  </button>
+  <div class="fordele-tekst-1">
+    <p>As an Energii member, you get 10% off at Fred´s when you show your membership card.</p>
+  </div>
+  </div>
+
+    <div class="fordele_boks">
+  <button class="fordele-overskrift-2">Free drink on your 10th buy
+      <span class="arrow">↓</span>
+  </button>
+  <div class="fordele-tekst-2">
+    <p>Buy a Friend of Fred’s card and get your 10th drink for free!</p>
+  </div>
+  </div>
+
+    <div class="fordele_boks">
+  <button class="fordele-overskrift-3">15% off at Fred's
+      <span class="arrow">↓</span>
+  </button>
+  <div class="fordele-tekst-3">
+    <p>When you’re at a nail or hair appointment you get 15% off at Fred’s.</p>
+  </div>
+  </div>
+</div>
+
+<h2>FRIEND OF FRED'S</h2>
+<div class="friend_of_freds">
+<img src={Friends.src} alt="Friend of fred's klippekort">
+</div>
+
+<h2 class="collaborators">COLLABORATORS</h2>
+<div class="fordele_emmely">
+    <h2>FRED'S X EMMELY MORAITIS</h2>
+    <h2 class="pistachio_h2">PISTACHIO MATCHA</h2>
+    <div class="fordele_emmely_1-1">
+        <img src={Emmely.src} alt="Emmely Moraitis">
+         <div class="fordele_emmely_boks">
+        <h4>About Emmely Moraitis</h4>
+        <p>Emmely Moraitis is a rising influencer who has gained significant attention over the past year on TikTok and Instagram. </p>
+        <p>She primarily shares fashion content, a passion she expresses with personality and style. Through her authentic aesthetic, she has built an engaged following and established herself as a voice in Danish fashion and lifestyle.</p>
+        <p class="fordele_emmely_tekst">We love having Emmely as a customer at Studio 27 and are so excited for the collaboration with her!</p>
+    </div>
+    </div>
+</div>
+
+<div class="fordele_1-1">
+    <div class="fordele_card_1">
+        <h3>COLLABORATION WITH AYA&IDA</h3>
+        <p>Bring your own AYA&IDA thermo cup and get 10% off your hot drink at Fred’s. </p>
+        <p>Together, we’re helping the planet by reducing the use of plastic and paper cups.</p>
+    </div>
+
+    <div class="fordele_card_2">
+        <h3>EVENT WITH BAREEN</h3>
+        <p>On july 4th, you can find us at Bareen’s new collection launch at their store on Ny Østergade 10, 1101 Copenhagen K.</p>
+        <p>The event will take place from 10 AM to 6 PM, where we’ll be serving delicious refreshments at 50% off.</p>
+        <a class="link" href="https://www.instagram.com/bareen/">Read more about it on Bareen’s Instagram</a>
+    </div>
+
+    <div class="fordele_card_3">
+        <h3>FRED’S IS COMING TO MUSIK I LEJET 2025!</h3>
+        <p>On July 18–19, you can find Fred’s pop-up at the Musik i Lejet Festival!</p>
+        <p>We’ll be serving delicious pastries, fresh lemonade, coffee, and matcha – just like at our regular coffee bar. The stand will be open until 7 PM on both days.</p>
+        <p>Come by and say hi to Fred’s at MIL!</p>
+    </div>
+
+    <div class="fordele_card_4">   
+        <h3>Yoga in the Park – Every Tuesday in June</h3>
+        <p>Join us for outdoor yoga sessions every Tuesday in June from 9–10 AM in Kongens Have, guided by an instructor from jo:ga.</p>
+        <p>After the session, enjoy refreshing drinks delivered straight from Fred’s!</p>
+        <p>Participation is 100 DKK per person, and spots are limited. Stay tuned on our Instagram for updates on how to join the yoga events!</p>
+    </div>
+</div>
+</body>
+</Layout>
+
+<script src="/src/js/fordele.js"></script>
+<style>
+h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.fordele_1-1-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 20px;
+  padding-bottom: 2rem;
+  justify-content: center;
+ align-self: center;
+ align-items: center;
+ max-width: 580px;
+}
+
+.fordele_boks{
+     flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    max-width: 390px;
+    align-items: center;
+}
+
+.fordele_1-1-1 button { 
+  background-color: var(--beige);
+  border: none;
+  padding: 4rem;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+   position: relative; 
+  transition: 0.3s;
+  font-weight: bold;
+  margin-bottom: 1rem;
+    min-width: 350px; 
+    border: 5px solid var(--lyserød);
+    width: 100%;
+}
+
+
+.fordele_1-1-1 button:hover {
+  background-color: var(--beige);
+  transform: scale(1.05); 
+  
+}
+
+
+.fordele_1-1-1 div[class^="fordele-tekst-"] {
+  display: none;
+  padding: 2rem;
+  background-color: var(--beige);
+  border: 3px solid var(--lyserød);
+  border-radius: 0 0 12px 12px;
+  font-family: 'Abhaya Libre', serif;
+  font-size: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+   min-width: 300px; 
+}
+.fordele_1-1-1 div[class^="fordele-tekst-"] {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fordele_1-1-1 button.open .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+h1{
+    text-align: center;
+}
+h2{
+    font-family: "Judson";
+    text-align: center;
+}
+.collaborators{
+  margin-top: 2rem;
+}
+.friend_of_freds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--lyserød);
+  padding: 2rem
+}
+.friend_of_freds img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fordele_emmely{
+    border: 5px solid var(--lyserød);
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 40px;
+    margin-left: 10px;
+    margin-right: 10px; 
+    margin: 40px;
+}
+
+.pistachio_h2{
+    color: var(--grøn);
+    font-family: "Judson";
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.fordele_emmely_1-1{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.fordele_emmely_1-1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+}
+.fordele_emmely_boks{
+    background-color: var(--beige);
+    padding: 20px;
+    border-radius: 40px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+.fordele_emmely_boks p{
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 40px;
+}
+.fordele_emmely_boks h4{
+    font-family: "Judson";
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+h4{
+    text-align: center;
+    font-size: 22px;
+}
+x
+.fordele_emmely_tekst{
+    font-weight: bold;
+}
+
+.fordele_1-1{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding: 60px 20px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+.fordele_card_1, 
+.fordele_card_2,
+.fordele_card_3,
+.fordele_card_4{
+    flex: 1 1 320px;
+    border-radius: 24px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 420px; 
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    overflow: auto;
+    min-width: 500px;
+}
+
+.fordele_card_1{
+    background-color: var(--beige);
+}
+
+.fordele_card_1 h3{
+    font-family: "Judson";
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.fordele_card_1 p{
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px; 
+    line-height: 2;
+}
+
+.fordele_card_2{
+    background-color: var(--lyserød);
+}
+
+.fordele_card_2 h3{
+    font-family: "Judson"; 
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.fordele_card_2 p{
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    line-height: 2;
+}
+  .link {
+      color: var(--sort);
+      text-decoration: underline;
+      margin-left: 40px;
+      font-family: "Abhaya Libre";
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .fordele_card_3{
+    background-color: var(--beige);
+    }
+
+    .fordele_card_3 h3{
+        font-family: "Judson";
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    .fordele_card_3 p{
+        margin-bottom: 20px;
+        font-size: 16px;
+        text-align: left;
+        margin-left: 50px;
+        margin-right: 50px;
+        line-height: 2;
+    }
+
+    .fordele_card_4{
+        background-color: var(--lyserød);
+    }
+
+    .fordele_card_4 h3{
+        font-family: "Judson";
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+    .fordele_card_4 p{
+        margin-bottom: 10px;
+        font-size: 16px;
+        text-align: left;
+        margin-left: 50px;
+        margin-right: 50px;
+        line-height: 1.8;
+    }
+
+    @media (min-width: 900px){
+         .fordele_1-1-1{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 2000px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        h2{
+            text-align: center;
+        } 
+
+         .fordele_emmely_1-1{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+             align-items: stretch; 
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+         .fordele_emmely_1-1 img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 40px;
+        margin-top: 2rem; 
+        } 
+
+        .fordele_1-1{
+            justify-content: center;
+            gap: 40px;
+            padding: 80px 100px;
+        }
+
+         .fordele_emmely_boks h4{
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+            .fordele_emmely_boks p{
+            line-height: 1.5;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            font-size: 18px;
+        }
+
+          .fordele_emmely_boks {
+            height: 600px;
+            width: 100%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: start; 
+        } 
+    }
+
+
+        @media (min-width: 1000px){
+        h2{
+            text-align: center;
+         }
+    
+        .fordele_card_1, 
+        .fordele_card_2,
+        .fordele_card_3,
+        .fordele_card_4{
+            flex: 1 1 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            height: 550px;
+        }
+
+        .fordele_card_1 h3,
+        .fordele_card_2 h3,
+        .fordele_card_3 h3, 
+        .fordele_card_4 h3{
+            margin-bottom: 4rem;
+        }
+
+        .fordele_card_1 p,
+        .fordele_card_2 p,
+        .fordele_card_3 p,
+        .fordele_card_4 p{
+            margin-bottom: 2rem;
+            font-size: 18px;
+            text-align: left;
+            margin-left: 100px;
+            margin-right: 100px;
+        } 
+
+        .link{
+            margin-left: 100px;
+            font-size: 18px;
+        }
+        }
+</style>
+

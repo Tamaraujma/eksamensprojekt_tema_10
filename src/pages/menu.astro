@@ -1,0 +1,401 @@
+---
+import Layout from "../layouts/Layout.astro";
+import '../css/generel.css';
+import matchaIllustration from "../assets/Matcha.png"
+import salon from "../assets/IMG_4586_result.webp"
+import outside from "../assets/IMG_4543_result.webp"
+import door from "../assets/IMG_4577_result.webp"
+
+
+const url= "https://mzgerdkdpiuiptojhrqo.supabase.co/rest/v1/freds_menu?select=*"
+  const key= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16Z2VyZGtkcGl1aXB0b2pocnFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2OTkxMzksImV4cCI6MjA2MjI3NTEzOX0.gxYokqCVuVtoyOdGDo02azparnJlGTlrPeACQ6p3300"
+   const options = {
+            headers: {
+                apikey: key,
+            },
+        };
+
+const data = await fetch(url, options).then((res) => res.json())
+
+console.log(data)
+
+---
+<Layout>
+  <h1>MENU</h1>
+  <section>
+  <div class="drink_container">
+    <div class="menu_drink_box">
+    <img src="/logo.svg" alt="Logo">
+  <h1>To Drink</h1>
+ 
+  {data.map ((menu) => {
+    if (menu.menu_category == "Drink") {
+      return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  } 
+})}
+
+  {data.map ((menu) => {
+    if (menu.menu_category == "Drink_2") {
+      return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  }
+})}
+</div>
+
+    <div class="menu_new_box">
+    <h2>New</h2>
+    <p>Try our "Foam Of The Season" for your matcha or latte</p>
+    <p>3,-</p>
+  {data.map ((menu) => {
+  if (menu.new) {
+    return (
+        <article class="menu_item">
+            <p>{menu.slug}</p>
+        </article>
+    );
+  }
+  })}
+  <p class="footer_note">Ask the baristas about any allergies</p>
+  </div>
+</div>
+
+  <div class="menu_food_box">
+  <img src="/logo.svg" alt="Logo">
+ <h1>To Eat</h1>
+ 
+  {data.map ((menu) => {
+  if (menu.menu_category == "Food") {
+    return (
+        <article class="menu_item">
+            <p>{menu.slug} - {menu.price}</p>
+        </article>
+    );
+  }
+  })}
+  <p class="footer_note">Ask the baristas about any allergies</p>
+</div>
+</section>
+
+
+
+<div class="frametext_1">
+<h2>BEHIND THE SCENES</h2>
+<p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
+<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks</p> <p>- from signature matchas to flavorful lattes.</p>
+
+<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going,</p> <p>we've got a little bit of everything.</p>
+<p>It's all made with love - and with a focus on flavor, quality, and a cozy vibe you won't find anywhere else.</p>
+</div>
+
+<div class="collab_emmely">
+  <div class="flex">
+<div>
+<img class="matcha_img" src={matchaIllustration.src} alt="Matcha_illustration"/>
+</div>
+<div class="frametext_2">
+<h3>Available on June 1st!</h3>
+<p>In collaboration with Emmely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
+<p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
+</div>
+</div>
+</div>
+
+<div class="frametext_3">
+<h2>ABOUT OUR MENU</h2>
+<p>As a newly opened coffee bar, we handle all daily shopping ourselves.</p>
+<p>Every morning, we head to Inco to buy what we need for the day.</p> 
+<p>We aim to choose organic products whenever possible, and our chicken is halal.</p>
+<p>At Fred's, it's important to us that everyone feels welcome!</p>
+</div>
+<div class="menu_3_img-container">
+<img src={salon.src} alt="Salon" class="menu_3_img" />
+<img src={outside.src} alt="Outside" class="menu_3_img" />
+<img src={door.src} alt="Door" class="menu_3_img"/>
+</div>
+
+</Layout>
+<style>
+/* til mobilversion */
+
+img {
+  max-width: 100%;
+}
+
+h3, h2{
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+section{
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+
+.drink_container, 
+.menu_food_box{
+display: grid;
+grid-column: span 1;
+grid-row: 1/-1; 
+grid-template-columns: 1fr;
+margin-bottom: 2rem;
+}
+
+.menu_drink_box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.menu_drink_box img,
+.menu_drink_box h1 {
+  grid-column: 1 / -1; /* spænder over begge kolonner */
+  justify-self: center; /* centrer indholdet horisontalt */
+}
+
+.menu_drink_box,
+.menu_food_box{
+  background-color: var(--lyserød);
+  color: var(--sort);
+  font-family: "Sometype Mono";
+  width: 470px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu_item p{
+  font-family: "Sometype Mono";
+  text-align: left;
+  font-size: 14px;
+  margin-left: 2rem;
+}  
+
+.menu_drink_box h1, 
+.menu_food_box h1{
+  font-family: "Sometype Mono";
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.menu_drink_box h1{
+  margin-top: 1rem;
+}
+.menu_food_box{
+  min-height: 800px;
+}
+
+.menu_drink_box p{
+  line-height: 2;
+}
+
+.menu_food_box p{
+padding-left: 2rem;
+margin-left: 2rem;
+margin-right: 2rem;
+}
+
+.menu_drink_box img, 
+.menu_food_box img{
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.menu_new_box {
+  background-color: var(--lyserød);
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem; /* for luft i bunden */
+  align-items: center;
+}
+
+.menu_new_box h2{
+  font-family: "Sometype Mono";
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.menu_new_box p{
+  font-family: "Sometype Mono";
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+}
+.footer_note{
+  margin-top: 2rem;
+  font-family: "Sometype Mono";
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 14px;
+}
+
+h1{
+  text-align: center;
+ }
+
+.frametext_1 h2, .frametext_3 h2{
+  text-align: center;
+}
+
+.frametext_1, .frametext_3{
+border: 5px solid #FA719C;
+  padding: 20px;
+border-radius: 40px;
+margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
+max-width: 380px;
+}
+
+.frametext_2{
+  border: 5px solid #FA719C;
+  padding: 20px;
+border-radius: 40px;
+max-width: 380px;
+}
+
+.collab_emmely{
+  background-color: #F7F1E6 ;
+  padding: 20px 0; /* 20px top og bund, 0px til siderne */
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.collab_emmely h3{
+ color: #FA719C;
+ text-align: center;
+}
+
+.matcha_img {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.menu_3_img {
+  border-radius: 80px;
+  width: 80%;             /* Gør billederne bredere */
+  max-width: 300px;       /* Maksimal bredde for billederne */
+  aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
+  object-fit: cover;      /* Billedet fylder containeren uden at forvrænge */
+  display: block;         /* Gør det muligt at centrere med margin */
+  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
+  margin-bottom: 40px;    /* Mere luft mellem billederne */
+}
+
+
+@media screen and (min-width: 600px){
+section{
+  display: grid;
+   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; 
+  margin-left: 4rem;
+  }
+
+  .drink_container{
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  }
+   
+  .menu_food_box{
+  grid-column: 2/3;
+  grid-row: 1/-1;
+} 
+
+.menu_food_box h1{
+  margin-top: -3rem
+}
+.menu_food_box p{
+  padding: 0;
+  margin-left: 2rem;
+}
+  .menu_drink_box,
+  .menu_food_box{
+    width: 600px;
+  } 
+
+  .menu_new_box{
+    width: 600px;
+  }
+
+  .menu_item{
+    text-align: left;
+  }
+  
+  .menu_3_img-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+  }
+
+  .frametext_1{
+    height: 450px;
+    max-width: 380px;;
+  }
+}
+
+/* til computerversion */
+@media screen and (min-width: 768px) {
+
+  .frametext_1{
+max-width: 1050px;
+height: 300px;
+  }
+
+  .frametext_2{
+    max-width: 380px;
+    height: 420px;
+  }
+
+  .frametext_3{
+    max-width: 1050px;
+    height: 250px;
+  }
+
+  .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.matcha_img {
+  max-width: 460px;
+  height: auto;
+  margin: 0;
+  margin-right: 3rem;
+}
+
+
+.menu_3_img-container {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto; 
+}    
+
+.menu_3_img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 1.5rem; /* Giver lidt luft mellem billederne */
+}
+  }
+
+</style>
