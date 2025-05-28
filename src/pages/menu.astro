@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
+import '../css/generel.css';
 import matchaIllustration from "../assets/Matcha.png"
 import salon from "../assets/IMG_4586_result.webp"
 import outside from "../assets/IMG_4543_result.webp"
@@ -84,29 +84,36 @@ console.log(data)
 </section>
 
 
+
 <div class="frametext_1">
 <h2>BEHIND THE SCENES</h2>
 <p>At Fred's, our menu is carefully curated based on what we enjoy the most when visiting a coffee bar.</p>
-<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks - from signature matchas to flavorful lattes.</p>
+<p>We believe that good coffee is all about personality, so we've added our own creative twists to classic drinks</p> <p>- from signature matchas to flavorful lattes.</p>
 
-<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going, we've got a little bit of everything.</p>
+<p>Whether you're in the mood for something sweet like a fresh pastry, or something savory to keep you going,</p> <p>we've got a little bit of everything.</p>
 <p>It's all made with love - and with a focus on flavor, quality, and a cozy vibe you won't find anywhere else.</p>
 </div>
 
-<div class="collab_emely">
-<img src={matchaIllustration.src} alt="Matcha_illustration" />
 
+<div class="collab_emely">
+  <div class="flex">
+<div>
+<img src={matchaIllustration.src} alt="Matcha_illustration" />
+</div>
+    
 <div class="frametext_2">
 <h3>Available on June 1st!</h3>
 <p>In collaboration with Emely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
 <p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
 </div>
 </div>
+</div>
 
 <div class="frametext_3">
 <h2>ABOUT OUR MENU</h2>
 <p>As a newly opened coffee bar, we handle all daily shopping ourselves.</p>
-<p>Every morning, we head to Inco to buy what we need for the day. We aim to choose organic products whenever possible, and our chicken is halal.</p>
+<p>Every morning, we head to Inco to buy what we need for the day.</p> 
+<p>We aim to choose organic products whenever possible, and our chicken is halal.</p>
 <p>At Fred's, it's important to us that everyone feels welcome!</p>
 </div>
 <div class="menu_3_img-container">
@@ -120,6 +127,14 @@ console.log(data)
 /* til mobilversion */
 img {
   max-width: 100%;
+}
+
+h3, h2{
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.5;
 }
 
 section{
@@ -236,29 +251,61 @@ h1{
 
 .frametext_1, .frametext_2, .frametext_3{
 border: 5px solid var(--lyserød);
-  padding: 20px;
+ padding: 20px;
 border-radius: 40px;
 margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
 max-width: 380px;
 }
 
+
 .collab_emely{
   background-color: var(--beige) ;
-  padding: 20px 0; /* 20px top og bund, 0px til siderne */
+ }
 
+.frametext_2{
+border: 5px solid var(--lyserød);
+padding: 20px;
+border-radius: 40px;
+max-width: 380px;
+}
+
+.collab_emmely{
+  background-color: var(--beige);
+
+  padding: 20px 0; /* 20px top og bund, 0px til siderne */
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .collab_emely h3{
  color: var(--lyserød);
  text-align: center;
 }
+
+.matcha_img {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
 .menu_3_img {
   border-radius: 80px;
+
   width: 80%;             
   max-width: 300px;       
+
+  width: 80%;             /* Gør billederne bredere */
+  max-width: 300px;       /* Maksimal bredde for billederne */
+
   aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
   object-fit: cover;      
   display: block;         /* Gør det muligt at centrere med margin */
+
   margin: 1rem auto;      
   margin-bottom: 40px;    
 }
@@ -266,7 +313,23 @@ max-width: 380px;
 
 
 @media screen and (min-width: 1270px){
-  .drink_containe, .menu_food_box{
+  .drink_container, .menu_food_box{
+
+  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
+  margin-bottom: 40px;    /* Mere luft mellem billederne */
+}
+
+
+@media screen and (min-width: 600px){
+section{
+  display: grid;
+   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr; 
+  margin-left: 4rem;
+  }
+
+  .drink_container{
+
   grid-column: 1/2;
   grid-row: 1/-1; 
   }
@@ -295,6 +358,18 @@ max-width: 380px;
   .menu_item{
     text-align: left;
   }
+  
+  .menu_3_img-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+  }
+
+  .frametext_1{
+    height: 450px;
+    max-width: 380px;;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -317,14 +392,52 @@ max-width: 380px;
 .collab_emely img {
   width: 35%;
   margin-left: 100px;
+
+
+  .frametext_1{
+max-width: 1050px;
+height: 300px;
+  }
+
+  .frametext_2{
+    max-width: 380px;
+    height: 420px;
+  }
+
+  .frametext_3{
+    max-width: 1050px;
+    height: 250px;
+  }
+
+  .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
+.matcha_img {
+  max-width: 460px;
+  height: auto;
+  margin: 0;
+  margin-right: 3rem;
+}
+
+
 .menu_3_img-container {
-  display: flex;            /* Gør containeren til en flex container */
-  justify-content: center;  /* Centrerer billederne horisontalt */
-  width: 100%;              
-  margin: 0 auto;           
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto; 
 }    
+
+.menu_3_img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 1.5rem; /* Giver lidt luft mellem billederne */
+}
   }
 
 </style>

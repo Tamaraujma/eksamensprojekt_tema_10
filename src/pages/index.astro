@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Generelt from '../src/css/generelt.css';
+import '../css/generel.css';
 import heroImage from '../assets/hero.webp';
 import Logo from '../assets/logo_hero.svg';
 import Matcha1 from '../assets/IMG_4560_result.webp';
 import Latte from '../assets/IMG_4627_result.webp';
 import Matcha2 from '../assets/IMG_4601_result.webp';
-import Emmely from '../assets/Emmely_news_result.webp';
+import Emmely from '../assets/Emmely_result.webp';
 import Studio27 from '../assets/Studio_27_result.webp';
 import Freddieo from '../assets/Freddieo_result.webp';
 ---
@@ -14,16 +14,18 @@ import Freddieo from '../assets/Freddieo_result.webp';
 <Layout>
     <div class="img_wrapper">
 	<img class="hero" src={heroImage.src} alt="Forsidebillede" />
-    <img class="overlay" src={Logo.src} alt="logo">
+    <img class="overlay" src={Logo.src} alt="logo"/>
 </div>
     <section class="ramme">
+    <div class="text">
     <h1>Welcome to Fred’s Coffeeshop!</h1>
-    <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces – shared with the nail salon Studio 27 and the hair salon Freddie’O.</p>
-    <p>Fred's is a family-owned business, founded by the creators of the two salons. Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
+    <p>Fred’s is a newly opened coffeeshop located in one of Copenhagen’s most beautiful spaces - <br> shared with the nail salon Studio 27 and the hair salon Freddie’O.
+    <br>Fred's is a family-owned business, founded by the creators of the two salons. <br>Stop by and enjoy a delicious coffee or matcha – we can’t wait to welcome you!</p>
     <p>Find us behind the nail and hair salon!</p>
+    </div>
     <div class="button-group">
-    <button class="button">FRED'S</button>
-    <button class="button"> MENU</button> 
+    <a href="/om_freds" class="button">ABOUT FRED'S</a>
+    <a href="/menu" class="button">MENU</a>
     </div>
   
 </section>
@@ -38,18 +40,18 @@ import Freddieo from '../assets/Freddieo_result.webp';
     <div>
 <img class="emmely" src={Emmely.src} alt="Emmely"></div>
 <div class="ramme_pink">
-    <h4>EMMELY MORAITIS</h4>
-    <p>In collaboration with influencer Emmely Moraitis, we’ve created a Pistachio Matcha drink – available at Fred’s starting June 1st, 2025!</p>
+    <h4>EMELY MORENO</h4>
+    <p>In collaboration with influencer Emely Moreno, we’ve created a Pistachio Matcha drink – available at Fred’s starting June 1st, 2025!</p> <p> Don’t miss out on this limited-edition flavor – a perfect summer treat!</p>
 </div>
 </div>
-<button class="button">READ MORE</button>
+<a href="/fordele" class="button">READ MORE</a>
 </section>
 <h2>FOR YOU</h2>
 <div class="beige_box">
     <p>Fred’s is constantly evolving, which is why we collaborate with various brands and influencers. We also want to give you, our customers, something in return. Learn more about exclusive benefits and collaborations under our Treasures section!</p>
 </div>
 <div class="center_knap"> 
-   <button class="button">TREASURES</button> 
+    <a href="/fordele" class="button">TREASURES</a>
 </div>
 <section class="pink">
     <div>
@@ -60,7 +62,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
     </p>
 </div>
 <div class="center_knap">
-    <button class="button_beige">BOOKINGS</button>
+    <a href="https://josefinejensen.planway.com/" class="button_beige">BOOKINGS</a>
 </div>
 </div>
 <div>
@@ -71,7 +73,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
     You can book your appointment to get fresh hair  below!</p>
 </div>
 <div class="center_knap">
-    <button class="button_beige">BOOKINGS</button>
+    <a href="https://freddieohair-26975.planway.com/" class="button_beige">BOOKINGS</a>
 </div>
 </div>
 </section>
@@ -103,6 +105,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
   height: auto;
   display: block;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .overlay {
@@ -152,7 +155,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
  .button {
     width: 180px;  
     height:50px;  
-  background-color: #c8d3ae; 
+  background-color: var(--grøn);
   border: none;
   border-radius: 100px; 
   padding: 0.8rem 2rem;
@@ -163,10 +166,15 @@ import Freddieo from '../assets/Freddieo_result.webp';
     margin: 1rem auto; 
 }
 
+a{
+    text-decoration: none;
+    color: var(--sort);
+}
+
 .button_beige {
     width: 180px;  
     height:50px;  
-  background-color: #F7F1E6 ; 
+  background-color: var(--beige);
   border: none;
   border-radius: 100px; 
   padding: 0.8rem 2rem;
@@ -175,6 +183,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
   margin: 0 1rem; 
   transition: transform 0.2s ease;
   text-align: center;
+  margin-top: 40px;
 }
 
 .center_knap{
@@ -185,11 +194,13 @@ display: flex;
 }
 
 .button:hover{
-    transform: scale(1.05);   
+    transform: scale(1.05);
+    font-weight: 550;   
 }
 
 .button_beige:hover{
     transform: scale(1.05);   
+    font-weight: 550;
 }
 
 img {
@@ -200,77 +211,96 @@ img {
 }
 
 .ramme{
-    border: 5px solid #FA719C;
-    padding: 20px;
+    border: 5px solid var(--lyserød);
+    padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
-    max-width: 330px;
-    height: auto;
+    max-height: 330px;
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.ramme p{
+    line-height: 1.5;
 }
 
 .ramme_pink{
-    border: 5px solid #FA719C;
+    border: 5px solid var(--lyserød);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
-    max-width: 280px;
+    max-width: 285px;
+}
+
+.ramme_pink p{
+    line-height: 1.5;
 }
 
 .ramme_beige{
-    border: 4px solid #F7F1E6;
+    border: 4px solid var(--beige);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
-    max-width: 280px;
+    max-width: 282px;
+    text-align: center;
 }
 
 .ramme_beige p{
-    color: #F7F1E6;
+    color: var(--beige);
+    align-items: center;
+    margin-top: 0;
 }
+
 
 .beige_box{
     border: 4px;
-    background-color: #F7F1E6;
-    padding: 2rem;
+    background-color: var(--beige);
+    padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
     max-width: 300px;
     height: auto;
 }
 
+.beige_box p{
+    line-height: 1.5;
+}
+
 .beige {
   display: flex;
   flex-direction: column;
   align-items: center; /* centrerer indholdet vandret */
- background-color: #F7F1E6; 
+ background-color: var(--beige);
 }
 
 .pink{
     display: flex;
   flex-direction: column;
   align-items: center; /* centrerer indholdet vandret */
-    background-color: #FA719C;
+    background-color: var(--lyserød);
     text-align: left;
     padding: 1rem;
 }
 
 .pink h3{
-    color: #F7F1E6;
+    color: var(--beige);
 }
 
 h2, h3{
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     padding-top: 30px;
 }
 
 h4{
     margin-top: 0;
+    text-align: center;
 }
 
 
 .beige_h2{
-    color: #F7F1E6;
+    color: var(--beige);
     text-align: center;
     padding-bottom: 10px;
     padding-top: 30px;
@@ -281,7 +311,20 @@ p {
     margin-top: 1rem;
 }
 
- 
+@media (min-width: 400px){
+    
+  .billede_group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .ramme{
+    max-height: 600px;
+  }
+}
+
 @media (min-width: 768px) {
 
     .hero{
@@ -289,12 +332,11 @@ p {
         width: 100%;
     }
 
-
     .ramme{
        max-width: 72%;
        margin: 0 auto;
        margin-top: 40px;
-       height: 350px;
+       min-height: 250px;
     }
 
     .button-group {
@@ -358,7 +400,6 @@ p {
     text-align: left;
     margin-top: 1rem;
 }
-
 
 }
     

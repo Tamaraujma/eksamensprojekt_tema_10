@@ -1,16 +1,18 @@
-const buttons = document.querySelectorAll('[class^="fordele-overskrift"]');
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".fordele_1-1-1 button");
 
-buttons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    const textBox = document.querySelector(`.fordele-tekst-${index + 1}`);
-    const isVisible = textBox.style.display === "block";
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const tekstBox = button.nextElementSibling;
 
-    // Skjul alle andre
-    document.querySelectorAll('[class^="fordele-tekst"]').forEach((box) => {
-      box.style.display = "none";
+      // Toggle visning af tekstboksen
+      if (tekstBox.style.display === "flex") {
+        tekstBox.style.display = "none";
+        button.classList.remove("open");
+      } else {
+        tekstBox.style.display = "flex";
+        button.classList.add("open");
+      }
     });
-
-    // Toggle valgt
-    textBox.style.display = isVisible ? "none" : "block";
   });
 });
