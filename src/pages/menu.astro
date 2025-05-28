@@ -56,9 +56,9 @@ console.log(data)
   {data.map ((menu) => {
   if (menu.new) {
     return (
-        <article class="menu_item">
+        <div class="menu_item">
             <p>{menu.slug}</p>
-        </article>
+        </div>
     );
   }
   })}
@@ -93,12 +93,12 @@ console.log(data)
 <p>It's all made with love - and with a focus on flavor, quality, and a cozy vibe you won't find anywhere else.</p>
 </div>
 
-<div class="collab_emmely">
+<div class="collab_emely">
 <img src={matchaIllustration.src} alt="Matcha_illustration" />
 
 <div class="frametext_2">
 <h3>Available on June 1st!</h3>
-<p>In collaboration with Emmely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
+<p>In collaboration with Emely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
 <p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
 </div>
 </div>
@@ -118,14 +118,12 @@ console.log(data)
 </Layout>
 <style>
 /* til mobilversion */
-    /* billeder bliver sat til max-width 100% */
 img {
   max-width: 100%;
 }
 
 section{
-  margin-left: 2rem;
-  margin-top: 3rem;
+  margin: 3rem 1rem 0 1rem; /* top, right, bottom, left */
 }
 
 .drink_container, 
@@ -133,7 +131,6 @@ section{
 display: grid;
 grid-column: span 1;
 grid-row: 1/-1; 
-grid-template-columns: 1fr;
 margin-bottom: 2rem;
 }
 
@@ -153,7 +150,7 @@ margin-bottom: 2rem;
   background-color: var(--lyserød);
   color: var(--sort);
   font-family: "Sometype Mono";
-  width: 470px;
+  width: 400px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -164,6 +161,7 @@ margin-bottom: 2rem;
   font-size: 14px;
   margin-left: 2rem;
 }  
+
 
 .menu_drink_box h1, 
 .menu_food_box h1{
@@ -177,6 +175,7 @@ margin-bottom: 2rem;
 }
 .menu_food_box{
   min-height: 800px;
+  width: 400px;
 }
 
 .menu_drink_box p{
@@ -192,16 +191,16 @@ margin-right: 2rem;
 .menu_drink_box img, 
 .menu_food_box img{
   max-width: 300px;
-  margin: 0 auto;
-  margin-top: 2rem;
+   margin: 0 auto; 
+  margin-top: 2rem; 
 }
 .menu_new_box {
   background-color: var(--lyserød);
-  width: 470px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 3rem; /* for luft i bunden */
+  padding-bottom: 3rem; 
   align-items: center;
 }
 
@@ -236,47 +235,40 @@ h1{
 }
 
 .frametext_1, .frametext_2, .frametext_3{
-border: 5px solid #FA719C;
+border: 5px solid var(--lyserød);
   padding: 20px;
 border-radius: 40px;
 margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
 max-width: 380px;
 }
 
-.collab_emmely{
-  background-color: #F7F1E6 ;
+.collab_emely{
+  background-color: var(--beige) ;
   padding: 20px 0; /* 20px top og bund, 0px til siderne */
 
 }
 
-.collab_emmely h3{
- color: #FA719C;
+.collab_emely h3{
+ color: var(--lyserød);
  text-align: center;
 }
 .menu_3_img {
   border-radius: 80px;
   width: 80%;             
-  max-width: 300px;       /* Maksimal bredde for billederne */
+  max-width: 300px;       
   aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
-  object-fit: cover;      /* Billedet fylder containeren uden at forvrænge */
+  object-fit: cover;      
   display: block;         /* Gør det muligt at centrere med margin */
-  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
+  margin: 1rem auto;      
   margin-bottom: 40px;    
 }
 
 
 
 @media screen and (min-width: 1270px){
-section{
-  display: grid;
-   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr; 
-  margin-left: 4rem;
-  }
-
-  .drink_container{
+  .drink_containe, .menu_food_box{
   grid-column: 1/2;
-  grid-row: 1/-1;
+  grid-row: 1/-1; 
   }
    
   .menu_food_box{
@@ -305,15 +297,24 @@ section{
   }
 }
 
+@media screen and (min-width: 900px) {
+  section{
+    display: grid;
+    grid-template-rows: 1fr; 
+    margin-left: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr 1fr));
+    gap: 2rem;
+  } 
+}
 /* til computerversion */
 @media screen and (min-width: 768px) {
-  .collab_emmely {
-    display: flex;         /* Bruger flexbox for at placere billede og tekst ved siden af hinanden */
-    justify-content: space-between; /* Placerer elementerne med luft mellem dem */
+    .collab_emely {
+    display: flex;         /* Placerer billede og tekst ved siden af hinanden */
+    justify-content: space-between; /* Placerer elementerne med luft imellem */
     align-items: center;   /* Centrerer elementerne lodret */
     padding: 50px
 }  
-.collab_emmely img {
+.collab_emely img {
   width: 35%;
   margin-left: 100px;
 }
@@ -321,8 +322,8 @@ section{
 .menu_3_img-container {
   display: flex;            /* Gør containeren til en flex container */
   justify-content: center;  /* Centrerer billederne horisontalt */
-  width: 100%;              /* Containeren fylder hele bredden */
-  margin: 0 auto;           /* Centrerer containeren på siden */
+  width: 100%;              
+  margin: 0 auto;           
 }    
   }
 
