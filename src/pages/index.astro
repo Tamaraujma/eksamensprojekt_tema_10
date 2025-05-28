@@ -24,7 +24,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
     <p>Find us behind the nail and hair salon!</p>
     </div>
     <div class="button-group">
-    <a href="/om_freds" class="button">FRED'S</a>
+    <a href="/om_freds" class="button">ABOUT FRED'S</a>
     <a href="/menu" class="button">MENU</a>
     </div>
   
@@ -155,7 +155,7 @@ import Freddieo from '../assets/Freddieo_result.webp';
  .button {
     width: 180px;  
     height:50px;  
-  background-color: #c8d3ae; 
+  background-color: var(--grøn);
   border: none;
   border-radius: 100px; 
   padding: 0.8rem 2rem;
@@ -168,13 +168,13 @@ import Freddieo from '../assets/Freddieo_result.webp';
 
 a{
     text-decoration: none;
-    color: black
+    color: var(--sort);
 }
 
 .button_beige {
     width: 180px;  
     height:50px;  
-  background-color: #F7F1E6 ; 
+  background-color: var(--beige);
   border: none;
   border-radius: 100px; 
   padding: 0.8rem 2rem;
@@ -194,11 +194,13 @@ display: flex;
 }
 
 .button:hover{
-    transform: scale(1.05);   
+    transform: scale(1.05);
+    font-weight: 550;   
 }
 
 .button_beige:hover{
     transform: scale(1.05);   
+    font-weight: 550;
 }
 
 img {
@@ -209,7 +211,7 @@ img {
 }
 
 .ramme{
-    border: 5px solid #FA719C;
+    border: 5px solid var(--lyserød);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
@@ -224,7 +226,7 @@ img {
 }
 
 .ramme_pink{
-    border: 5px solid #FA719C;
+    border: 5px solid var(--lyserød);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
@@ -236,7 +238,7 @@ img {
 }
 
 .ramme_beige{
-    border: 4px solid #F7F1E6;
+    border: 4px solid var(--beige);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
@@ -245,7 +247,7 @@ img {
 }
 
 .ramme_beige p{
-    color: #F7F1E6;
+    color: var(--beige);
     align-items: center;
     margin-top: 0;
 }
@@ -253,7 +255,7 @@ img {
 
 .beige_box{
     border: 4px;
-    background-color: #F7F1E6;
+    background-color: var(--beige);
     padding: 1rem;
     border-radius: 40px;
     margin: 1rem auto;
@@ -269,20 +271,20 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center; /* centrerer indholdet vandret */
- background-color: #F7F1E6; 
+ background-color: var(--beige);
 }
 
 .pink{
     display: flex;
   flex-direction: column;
   align-items: center; /* centrerer indholdet vandret */
-    background-color: #FA719C;
+    background-color: var(--lyserød);
     text-align: left;
     padding: 1rem;
 }
 
 .pink h3{
-    color: #F7F1E6;
+    color: var(--beige);
 }
 
 h2, h3{
@@ -297,7 +299,7 @@ h4{
 
 
 .beige_h2{
-    color: #F7F1E6;
+    color: var(--beige);
     text-align: center;
     padding-bottom: 10px;
     padding-top: 30px;
