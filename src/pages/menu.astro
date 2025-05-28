@@ -98,12 +98,12 @@ console.log(data)
 <div class="collab_emely">
   <div class="flex">
 <div>
-<img src={matchaIllustration.src} alt="Matcha_illustration" />
+<img src={matchaIllustration.src} alt="Matcha_illustration" class="matcha_img" />
 </div>
     
 <div class="frametext_2">
 <h3>Available on June 1st!</h3>
-<p>In collaboration with Emely Moraitis, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
+<p>In collaboration with Emely Moreno, we've created a Pistachio Matcha - a fun and fresh new way to enjoy your matcha.</p>
 <p>This unique blend brings together the earthy depth of matcha with the smooth, nutty flavor of pistachio - a combination we're pretty excited about!</p>
 </div>
 </div>
@@ -156,8 +156,8 @@ margin-bottom: 2rem;
 
 .menu_drink_box img,
 .menu_drink_box h1 {
-  grid-column: 1 / -1; /* spænder over begge kolonner */
-  justify-self: center; /* centrer indholdet horisontalt */
+  grid-column: 1 / -1; 
+  justify-self: center; 
 }
 
 .menu_drink_box,
@@ -249,34 +249,29 @@ h1{
   text-align: center;
 }
 
-.frametext_1, .frametext_2, .frametext_3{
-border: 5px solid var(--lyserød);
- padding: 20px;
-border-radius: 40px;
-margin: 3rem auto;  /* placerer kasserne med text midt på siden*/
-max-width: 380px;
+.frametext_1, .frametext_3{
+  border: 5px solid var(--lyserød);
+  padding: 10px;
+  border-radius: 40px;
+  margin: 4rem 60px 4rem 60px; /* top, right, bottom, left */
 }
-
-
-.collab_emely{
-  background-color: var(--beige) ;
- }
 
 .frametext_2{
 border: 5px solid var(--lyserød);
-padding: 20px;
+ padding: 20px;
 border-radius: 40px;
-max-width: 380px;
+    max-width: 380px;
+    height: 300px;
 }
 
-.collab_emmely{
-  background-color: var(--beige);
-
-  padding: 20px 0; /* 20px top og bund, 0px til siderne */
-}
+.collab_emely{
+  background-color: var(--beige) ;  
+  padding: 20px 0;
+ }
 
 .flex{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -299,24 +294,24 @@ max-width: 380px;
   width: 80%;             
   max-width: 300px;       
 
-  width: 80%;             /* Gør billederne bredere */
-  max-width: 300px;       /* Maksimal bredde for billederne */
+  width: 80%;             
+  max-width: 300px;       
 
-  aspect-ratio: 1.5 / 2;  /* Mindre aflange billeder (højere end de er brede) */
+  aspect-ratio: 1.5 / 2; 
   object-fit: cover;      
-  display: block;         /* Gør det muligt at centrere med margin */
+  display: block;         
 
   margin: 1rem auto;      
   margin-bottom: 40px;    
 }
 
 
-
 @media screen and (min-width: 1270px){
-  .drink_container, .menu_food_box{
 
-  margin: 1rem auto;      /* Centrerer billederne vandret med luft omkring */
-  margin-bottom: 40px;    /* Mere luft mellem billederne */
+  .drink_container, .menu_food_box{
+  margin: 1rem auto;     
+  margin-bottom: 40px;    
+}
 }
 
 
@@ -329,7 +324,6 @@ section{
   }
 
   .drink_container{
-
   grid-column: 1/2;
   grid-row: 1/-1; 
   }
@@ -366,10 +360,6 @@ section{
     gap: 2rem; 
   }
 
-  .frametext_1{
-    height: 450px;
-    max-width: 380px;;
-  }
 }
 
 @media screen and (min-width: 900px) {
@@ -384,19 +374,17 @@ section{
 /* til computerversion */
 @media screen and (min-width: 768px) {
     .collab_emely {
-    display: flex;         /* Placerer billede og tekst ved siden af hinanden */
-    justify-content: space-between; /* Placerer elementerne med luft imellem */
-    align-items: center;   /* Centrerer elementerne lodret */
+    display: flex;         
+    justify-content: space-between; 
+    align-items: center;  
     padding: 50px
 }  
-.collab_emely img {
-  width: 35%;
-  margin-left: 100px;
-}
 
   .frametext_1{
 max-width: 1050px;
-height: 300px;
+height: 320px;
+margin-left: auto;
+margin-right: auto;
   }
 
   .frametext_2{
@@ -407,10 +395,13 @@ height: 300px;
   .frametext_3{
     max-width: 1050px;
     height: 250px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .flex {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -419,9 +410,7 @@ height: 300px;
 
 .matcha_img {
   max-width: 460px;
-  height: auto;
-  margin: 0;
-  margin-right: 3rem;
+  height: 420px;
 }
 
 
@@ -436,7 +425,7 @@ height: 300px;
   width: 100%;
   max-width: 300px;
   height: auto;
-  margin: 0 1.5rem; /* Giver lidt luft mellem billederne */
+  margin: 0 1.5rem; 
 }
   }
 
