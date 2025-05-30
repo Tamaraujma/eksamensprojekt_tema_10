@@ -10,6 +10,10 @@ img {
   max-width: 100%;
 }
 
+body {
+  max-width: 1200px;
+}
+
 html {
   --grøn: rgba(189, 204, 165, 1);
   --lyserød: rgba(250, 113, 156, 1);
