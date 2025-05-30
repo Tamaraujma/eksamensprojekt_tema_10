@@ -6,6 +6,8 @@ import salon from "../assets/IMG_4586_result.webp"
 import outside from "../assets/IMG_4543_result.webp"
 import door from "../assets/IMG_4577_result.webp"
 
+const pageTitle = "Fred's Menu";
+
 
 const url= "https://mzgerdkdpiuiptojhrqo.supabase.co/rest/v1/freds_menu?select=*"
   const key= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16Z2VyZGtkcGl1aXB0b2pocnFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY2OTkxMzksImV4cCI6MjA2MjI3NTEzOX0.gxYokqCVuVtoyOdGDo02azparnJlGTlrPeACQ6p3300"
@@ -20,7 +22,7 @@ const data = await fetch(url, options).then((res) => res.json())
 console.log(data)
 
 ---
-<Layout>
+<Layout title={pageTitle}>
   <h1>MENU</h1>
   <section>
   <div class="drink_container">
